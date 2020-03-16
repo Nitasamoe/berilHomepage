@@ -15,6 +15,8 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  // Create base URL
+  router: { base: '/my-project/' },
   /*
   ** Customize the progress-bar color
   */

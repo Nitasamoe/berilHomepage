@@ -16,7 +16,7 @@ module.exports = {
     ]
   },
   // Create base URL
-  router: { base: '/my-project/' },
+  router: { base: '/berilbeden/' },
   /*
   ** Customize the progress-bar color
   */

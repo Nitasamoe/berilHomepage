@@ -1,10 +1,8 @@
 <template>
   <div class="gridPage" :style="gridPageConfig">
     <Header :columnLength="layoutColumns+1" :height="headerHeight"></Header>
-    <Hero :columnLength="layoutColumns+1" :height="heroHeight"></Hero>
+    <Hero :columnLength="layoutColumns+1" :height="800"></Hero>
     <About :columnLength="layoutColumns+1" :height="600"></About>
-    
-
 
   </div>
 </template>
@@ -23,18 +21,10 @@ export default {
   data() {
     return  {
       'headerHeight' : 80,
-      'layoutColumns' : 12,
-      'window' : {
-        'width': 0,
-        'height' :0
-      }
+      'layoutColumns' : 12
     }
   },
   methods: {
-    handleResize() {
-        this.window.width = window.innerWidth;
-        this.window.height = window.innerHeight > 500 ? window.innerHeight : 500;
-    }
   },
   computed: {
     gridPageConfig(){
@@ -43,21 +33,6 @@ export default {
       cssStyle += "grid-template-columns:" + this.layoutColumns + "1fr;"
       cssStyle += "grid-template-rows:" + this.headerHeight + "px ";
       return cssStyle
-    },
-    heroHeight(){
-      return this.window.height - this.headerHeight;
-    }
-  },
-  created() {
-    if(typeof window !== "undefined"){
-      window.addEventListener('resize', this.handleResize);
-      this.handleResize();
-    }
-      
-  },
-  destroyed() {
-    if(typeof window !== "undefined"){
-      window.removeEventListener('resize', this.handleResize);
     }
   }
 }

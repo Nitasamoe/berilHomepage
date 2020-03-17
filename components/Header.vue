@@ -7,11 +7,6 @@
 <script>
 export default {
     props: ['columnLength', 'height'],
-    data(){
-            return {
-                quantity: 5
-            }
-        },
     computed: {
         navBarStyle(){
             return "grid-column-start: 1; grid-column-end: " + this.columnLength + "; height:" + this.height + "px;"  

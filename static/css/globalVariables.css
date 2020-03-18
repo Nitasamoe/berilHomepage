@@ -1,0 +1,11 @@
+:root {
+    --fontMultiplicator: 1.3;
+    --baseTypeSize: 1em;
+    --h4TypeSize: calc(var(--baseTypeSize)*var(--fontMultiplicator));
+    --h3TypeSize: calc(var(--h4TypeSize)*var(--fontMultiplicator));
+    --h2TypeSize: calc(var(--h3TypeSize)*var(--fontMultiplicator));
+    --h1TypeSize: calc(var(--h2TypeSize)*var(--fontMultiplicator));
+
+
+    --mainColor:black;
+}

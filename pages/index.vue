@@ -2,7 +2,8 @@
   <div class="gridPage" :style="gridPageConfig">
     <Header :columnLength="layoutColumns+1" :height="headerHeight"></Header>
     <Hero :columnLength="layoutColumns+1" :height="800"></Hero>
-    <About :columnLength="layoutColumns+1" :height="600"></About>
+    <About :columnLength="layoutColumns+1" :height="1000"></About>
+    <Works :columnLength="layoutColumns+1" :height="1600"></Works>
 
   </div>
 </template>
@@ -11,16 +12,18 @@
 import Header from '~/components/Header.vue';
 import Hero from '~/components/Hero.vue';
 import About from '~/components/About.vue';
+import Works from '~/components/Works.vue';
 
 export default {
   components: {
     Header,
     Hero,
-    About
+    About,
+    Works
   },
   data() {
     return  {
-      'headerHeight' : 80,
+      'headerHeight' : 50,
       'layoutColumns' : 12
     }
   },
@@ -40,6 +43,7 @@ export default {
 
 <style>
 @import '../static/css/normalize.css';
+@import '~/static/css/globalVariables.css';
 
 html {
     box-sizing: border-box;

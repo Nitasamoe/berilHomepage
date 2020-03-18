@@ -10,8 +10,8 @@
                     <button>Press me</button>
             </div>
             <div class="aboutMeText">
-                    <h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</h3>
-                    <div>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+                    <h2> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</h2>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             </div>              
         </div>
     </div>    
@@ -45,8 +45,11 @@ export default {
 </script>
 
 <style scoped>
+@import '~/static/css/type.css';
+@import '~/static/css/globalVariables.css';
+
 .aboutMe {
-    background-color: #ddd;
+    background-color: #f4f4f4;
     padding-top: 30px;
 }
 .aboutMe > div {
@@ -78,12 +81,12 @@ export default {
         grid-template-rows: 5% 1fr 2fr 5%;
 }
 
-.aboutMeText > div {
+.aboutMeText > p {
         grid-column: 2/2;
         grid-row: 3/4;
 }
 
-.aboutMeText > h3 {
+.aboutMeText > h2 {
         grid-column: 2/2;
         grid-row: 2/3;
 }

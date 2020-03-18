@@ -17,7 +17,7 @@ export default {
 
 <style scoped>
 div {
-    background-color: black;
+    background-color: #ffffff;
     height: 30px;
 }
 </style>

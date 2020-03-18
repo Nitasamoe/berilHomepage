@@ -13,7 +13,9 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { type: 'stylesheet', href: '/css/normalize.css' }
+      { type: 'stylesheet', href: '/css/normalize.css' },
+      { type: 'stylesheet', href: '/css/type.css' },
+      { type: 'stylesheet', href: '/css/globalVariables.css' }
     ]
   },
   // Create base URL

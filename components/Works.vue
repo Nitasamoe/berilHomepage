@@ -7,7 +7,9 @@
         <div class="projectPortfolio">
             <div class="projectPreview" v-for="project in projects" :key="project.id">
                 <div></div>
-                <div>{{ project.name }}</div>
+                <div>
+                    <h4>{{ project.name }}</h4>
+                </div>
             </div>
         </div>
     </div>    

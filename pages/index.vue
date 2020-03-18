@@ -3,7 +3,8 @@
     <Header :columnLength="layoutColumns+1" :height="headerHeight"></Header>
     <Hero :columnLength="layoutColumns+1" :height="800"></Hero>
     <About :columnLength="layoutColumns+1" :height="1000"></About>
-    <Works :columnLength="layoutColumns+1" :height="1600"></Works>
+    <Works :columnLength="layoutColumns+1" :height="1800"></Works>
+    <Footer :columnLength="layoutColumns+1" :height="300"></Footer>
 
   </div>
 </template>
@@ -13,13 +14,15 @@ import Header from '~/components/Header.vue';
 import Hero from '~/components/Hero.vue';
 import About from '~/components/About.vue';
 import Works from '~/components/Works.vue';
+import Footer from '~/components/Footer.vue';
 
 export default {
   components: {
     Header,
     Hero,
     About,
-    Works
+    Works,
+    Footer
   },
   data() {
     return  {
@@ -54,13 +57,8 @@ html {
 *:after {
     box-sizing: inherit;
 }
-html,
-body,
-body div,
-.gridPage,
-.gridContent {
-    height: 100%;
-}
+
+   
 
 @media only screen and (min-width: 480px)  { 
 }

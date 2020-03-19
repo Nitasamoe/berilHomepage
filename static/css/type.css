@@ -2,24 +2,29 @@ h1 {
     font-size: var(--h1TypeSize);
     margin: 0px;
     padding: 0px;
+    font-family: var(--mainFont);
 }
 h2 {
     font-size: var(--h2TypeSize);
     margin: 0px;
     padding: 0px;
+    font-family: var(--mainFont);
 }
 h3 {
     font-size: var(--h3TypeSize);
     margin: 0px;
     padding: 0px;
+    font-family: var(--mainFont);
 }
 h4 {
     font-size: var(--h4TypeSize);
     margin: 0px;
     padding: 0px;
+    font-family: var(--mainFont);
 }
 p {
     font-size: var(--baseTypeSize);
     margin: 0px;
     padding: 0px;
+    font-family: var(--mainFont);
 }

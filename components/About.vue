@@ -1,13 +1,18 @@
 <template>
-    <div class="aboutMe" :style="aboutMeStyle">
-        <h1>Title</h1>
+    <div class="aboutMe pageGrid" :style="aboutMeStyle">
+        <div class="titleText">
+            <h1>About Me</h1>
+        </div>
         <div>
-            <picture :style="pictureStyle">
-                <!-- <source srcset="~/static/AboutMe_Picture.png" media="(win-width: 100px)"> -->
-                <img src="~/static/AboutMe_Picture.png" alt="The Picture of Beril Beden">
-            </picture>
-            <div class="cvDownloadBar">
-                    <button>Press me</button>
+            <div :style="pictureStyle">
+                <picture>
+                    <!-- <source srcset="~/static/AboutMe_Picture.png" media="(win-width: 100px)"> -->
+                    <!--<img src="~/static/AboutMe_Picture.png" alt="The Picture of Beril Beden"> -->
+                </picture>
+            </div>
+            
+            <div class="cvDownloadBar buttonUi">
+                    <button><h4>Download CV</h4></button>
             </div>
             <div class="aboutMeText">
                     <h2> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</h2>
@@ -27,17 +32,17 @@ export default {
             cssStyle += "grid-column-start: 1;"
             cssStyle += "height:" + this.height + "px;"
             cssStyle += "display: grid;";
-            cssStyle += "grid-template-columns: 2fr repeat(10, 1fr) 2fr;";
-            cssStyle += "grid-template-rows: repeat(6, 1fr);";
+            cssStyle += "grid-template-rows: 140px repeat(4, 1fr) 80px;";
             return cssStyle;
         },
         pictureStyle(){
             let cssStyle = "";
             cssStyle += "grid-column-start: 1;"
-            cssStyle += "grid-column-end: 5;"
+            cssStyle += "grid-column-end: 6;"
             cssStyle += "grid-row-start: 1;"
             cssStyle += "grid-row-end: 7;"
             cssStyle += "overflow: hidden;"
+            cssStyle += "background-color: #b7b7b7"
             return cssStyle;
         }
     }
@@ -47,12 +52,17 @@ export default {
 <style scoped>
 @import '~/static/css/type.css';
 @import '~/static/css/globalVariables.css';
+@import '~/static/css/baseUi.css';
 
 .aboutMe {
     background-color: #f4f4f4;
-    padding-top: 30px;
 }
-.aboutMe > div {
+
+.cvDownloadBar {
+    background-color: white;
+}
+
+.aboutMe > div:nth-child(2) {
     grid-column: 2/12;
     grid-row: 2/6;
     display: grid;
@@ -60,43 +70,37 @@ export default {
     grid-template-rows: 0.5fr repeat(6, 1fr);
 }
 
-.cvDownloadBar {
-        background-color: white;
-        grid-column: 2/12;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-}
-
-.cvDownloadBar > button {
-}
 
 .aboutMeText {
-        background-color: white;
-        grid-column: 5/12;
-        grid-row: 2/7;
-        display:grid;
-        grid-template-columns: 5% 1fr 5%;
-        grid-template-rows: 5% 1fr 2fr 5%;
+    background-color: white;
+    grid-column: 6/12;
+    grid-row: 2/7;
+    display:grid;
+    grid-template-columns: 5% 1fr 5%;
+    grid-template-rows: 5% 1fr 2fr 5%;
 }
 
 .aboutMeText > p {
-        grid-column: 2/2;
-        grid-row: 3/4;
+    grid-column: 2/2;
+    grid-row: 3/4;
 }
 
 .aboutMeText > h2 {
-        grid-column: 2/2;
-        grid-row: 2/3;
+    grid-column: 2/2;
+    grid-row: 2/3;
 }
 
 picture img{
     width: 100%;
 }
 
-h1 {
+.titleText {
     text-align: center;
     grid-column: 2/12;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
+
+
 </style>

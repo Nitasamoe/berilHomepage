@@ -26,6 +26,9 @@ export default {
 </script>
 
 <style scoped>
+@import '~/static/css/type.css';
+@import '~/static/css/globalVariables.css';
+
 div {
     background-color: #b7b7b7;
     height: 30px;

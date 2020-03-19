@@ -1,5 +1,5 @@
 <template>
-    <div class="footer" :style="footerStyle">
+    <div class="footer pageGrid" :style="footerStyle">
         <div class="contactData">
             <h2>Contact Me</h2>
             <p>fasfasf asfd asdfasdf a asdfasf</p>
@@ -20,7 +20,6 @@ export default {
             cssStyle += "grid-column-end: " + this.columnLength+ ";";
             cssStyle += "height:" + this.height + "px;";
             cssStyle += "display:grid;";
-            cssStyle += "grid-template-columns: 2fr repeat(10, 1fr) 2fr;";
             cssStyle += "display:grid;";
             cssStyle += "backgroundColor: #f4f4f4;";
             return cssStyle
@@ -32,6 +31,7 @@ export default {
 <style scoped>
 @import '~/static/css/type.css';
 @import '~/static/css/globalVariables.css';
+@import '~/static/css/baseUi.css';
 
 .footer > div {
     grid-column: 2 / 12;

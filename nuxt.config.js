@@ -15,7 +15,9 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { type: 'stylesheet', href: '/css/normalize.css' },
       { type: 'stylesheet', href: '/css/type.css' },
-      { type: 'stylesheet', href: '/css/globalVariables.css' }
+      { type: 'stylesheet', href: '/css/globalVariables.css' },
+      { type: 'stylesheet', href: '/css/baseUi.css' },
+      { type: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Fira+Sans&display=swap' }
     ]
   },
   // Create base URL

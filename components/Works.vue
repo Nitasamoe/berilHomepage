@@ -1,8 +1,16 @@
 <template>
-    <div class="works" :style="worksStyle">
-        <h1>Works</h1>
+    <div class="works pageGrid" :style="worksStyle">
+        <div class="titleText">
+            <h1>Works</h1>
+        </div>
         <div class="categories">
-
+            <ul>
+                <li v-for="category in categories" :key="category.id">
+                    <div class="buttonUi">
+                        <button><h4>{{category}}</h4></button>
+                    </div>
+                </li>
+            </ul>
         </div>
         <div class="projectPortfolio">
             <div class="projectPreview" v-for="project in projects" :key="project.id">
@@ -26,7 +34,7 @@ export default {
                 {"name": "Super Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id":2},
                 {"name": "Super Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id":3},
                 {"name": "Super Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id":4}
-            ],
+            ]
         }
     },
     computed: {
@@ -36,8 +44,7 @@ export default {
             cssStyle += "grid-column-start: 1;"
             cssStyle += "height:" + this.height + "px;"
             cssStyle += "display: grid;";
-            cssStyle += "grid-template-columns: 2fr repeat(10, 1fr) 2fr;";
-            cssStyle += "grid-template-rows: 1fr 0.5fr repeat(8, 1fr);";
+            cssStyle += "grid-template-rows: 140px  0.5fr 0.5fr repeat(7, 1fr);";
             return cssStyle;
         }
     }
@@ -47,16 +54,26 @@ export default {
 <style scoped>
 @import '~/static/css/type.css';
 @import '~/static/css/globalVariables.css';
+@import '~/static/css/baseUi.css';
 
 .works {
     background-color: #f4f4f4;
-    padding-top: 30px;
 }
 
 .categories {
-    background-color: white;
-    grid-column: 3 / 11;
+    grid-column: 4 / 10;
+}
+.categories ul {
+    display: flex;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    justify-content: space-around;
+    align-items: center;
+}
 
+.categories ul li {
+    list-style-type: none;
 }
 
 .projectPortfolio {
@@ -92,6 +109,15 @@ h1 {
     justify-content: space-around;
     align-items: center;
 }
+
+.titleText {
+    text-align: center;
+    grid-column: 2/12;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 
 
 </style>

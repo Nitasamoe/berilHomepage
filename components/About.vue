@@ -67,7 +67,7 @@ export default {
     grid-row: 2/6;
     display: grid;
     grid-template-columns: 0.5fr repeat(10, 1fr);
-    grid-template-rows: 0.5fr repeat(6, 1fr);
+    grid-template-rows: 0.5fr repeat(5, 1fr) 2fr;
 }
 
 

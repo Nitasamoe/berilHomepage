@@ -44,7 +44,7 @@ export default {
             cssStyle += "grid-column-start: 1;"
             cssStyle += "height:" + this.height + "px;"
             cssStyle += "display: grid;";
-            cssStyle += "grid-template-rows: 140px  0.5fr 0.5fr repeat(7, 1fr);";
+            cssStyle += "grid-template-rows: 140px  0.5fr 0.1fr repeat(7, 1fr);";
             return cssStyle;
         }
     }

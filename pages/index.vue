@@ -2,7 +2,7 @@
   <div class="gridPage" :style="gridPageConfig">
     <Header :columnLength="layoutColumns+1" :height="headerHeight"></Header>
     <Hero :columnLength="layoutColumns+1" :height="800"></Hero>
-    <About :columnLength="layoutColumns+1" :height="1000"></About>
+    <About :columnLength="layoutColumns+1" :height="800"></About>
     <Works :columnLength="layoutColumns+1" :height="1800"></Works>
     <Footer :columnLength="layoutColumns+1" :height="300"></Footer>
 

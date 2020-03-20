@@ -22,7 +22,7 @@ module.exports = {
   },
   // Create base URL
   router: {
-    base: "./",
+    base: "./", // add "./" before pushing to github pages
   },
   /*
   ** Customize the progress-bar color

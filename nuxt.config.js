@@ -22,7 +22,7 @@ module.exports = {
   },
   // Create base URL
   router: {
-    base: "/berilHomepage/",
+    base: "./",
   },
   /*
   ** Customize the progress-bar color

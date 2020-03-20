@@ -22,7 +22,7 @@ module.exports = {
   },
   // Create base URL
   router: {
-    base: process.env.DEPLOY_ENV === "GH_PAGES" ? "/berilHomepage/" : "/",
+    base: process.env.DEPLOY_ENV === "GH_PAGES" ? "/berilbeden/" : "/",
   },
   /*
   ** Customize the progress-bar color

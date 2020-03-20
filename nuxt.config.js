@@ -21,7 +21,9 @@ module.exports = {
     ]
   },
   // Create base URL
-  router: { base: '/berilbeden/' },
+  router: {
+    base: process.env.DEPLOY_ENV === "GH_PAGES" ? "/my-project/" : "/",
+  },
   /*
   ** Customize the progress-bar color
   */

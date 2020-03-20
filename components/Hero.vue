@@ -1,6 +1,6 @@
 <template>
     <div class="hero" :style="heroStyle">
-            <div v-bind:style="{ backgroundImage: 'url(' + require('~/static/heroBack.png') + ')'}">
+            <div v-bind:style="{ backgroundImage: 'url(' + require('~/assets/heroBack.png') + ')'}">
                 <div class="heroText">
                     <h1>Beril Beden</h1>
                     <h3>Never Stop never stopping</h3>

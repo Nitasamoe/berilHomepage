@@ -1,8 +1,8 @@
 <template>
-  <div class="gridPage" :style="gridPageConfig">
+  <div class="pageGrid">
     <Header :columnLength="layoutColumns+1" :height="headerHeight"></Header>
     <Hero :columnLength="layoutColumns+1" :height="800"></Hero>
-    <About :columnLength="layoutColumns+1" :height="800"></About>
+    <About></About>
     <Works :columnLength="layoutColumns+1" :height="1800"></Works>
     <Footer :columnLength="layoutColumns+1" :height="300"></Footer>
 
@@ -26,20 +26,13 @@ export default {
   },
   data() {
     return  {
-      'headerHeight' : 50,
+      'headerHeight' : 80,
       'layoutColumns' : 12
     }
   },
   methods: {
   },
   computed: {
-    gridPageConfig(){
-      var cssStyle = "";
-      cssStyle += "display: grid;"
-      cssStyle += "grid-template-columns:" + this.layoutColumns + "1fr;"
-      cssStyle += "grid-template-rows:" + this.headerHeight + "px ";
-      return cssStyle
-    }
   }
 }
 </script>
@@ -60,13 +53,9 @@ html {
 
    
 
-@media only screen and (min-width: 480px)  { 
+@media only screen and (min-width: 1400px)  { 
+
 }
-
-
-@media only screen and (min-width: 768px) {
-}
-
 
 
 </style>

@@ -1,6 +1,6 @@
 :root {
     --fontMultiplicator: 1.3;
-    --baseTypeSize: 1em;
+    --baseTypeSize: 1.3em;
     --h4TypeSize: calc(var(--baseTypeSize)*var(--fontMultiplicator));
     --h3TypeSize: calc(var(--h4TypeSize)*var(--fontMultiplicator));
     --h2TypeSize: calc(var(--h3TypeSize)*var(--fontMultiplicator));
@@ -10,5 +10,6 @@
     --mainColor:black;
 
     --mainFont:'Fira Sans', sans-serif;
+    --displayFont:'Poppins', sans-serif;
 
 }

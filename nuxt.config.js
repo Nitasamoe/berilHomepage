@@ -17,12 +17,13 @@ module.exports = {
       { type: 'stylesheet', href: '/css/type.css' },
       { type: 'stylesheet', href: '/css/globalVariables.css' },
       { type: 'stylesheet', href: '/css/baseUi.css' },
-      { type: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Fira+Sans&display=swap' }
+      { type: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Fira+Sans&display=swap' },
+      { type: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Poppins&display=swap' }
     ]
   },
   // Create base URL
   router: {
-    base: "./", // add "./" before pushing to github pages
+    base: process.env.DEPLOY_ENV === "GH_PAGES" ? "./" : "/" // add "./" before pushing to github pages
   },
   /*
   ** Customize the progress-bar color

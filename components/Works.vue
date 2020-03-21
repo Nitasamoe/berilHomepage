@@ -40,7 +40,6 @@ export default {
     computed: {
         worksStyle(){
             let cssStyle = "";
-            cssStyle += "grid-column-end: " + this.columnLength + ";"
             cssStyle += "grid-column-start: 1;"
             cssStyle += "height:" + this.height + "px;"
             cssStyle += "display: grid;";

@@ -5,19 +5,19 @@
 
 @media only screen and (min-width: 600px) {
     .pageGrid {
-        grid-template-columns: 2fr repeat(10, 1fr) 2fr;
+        grid-template-columns: 1fr repeat(10, 1fr) 1fr;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .pageGrid {
+        grid-template-columns: 1.5fr repeat(10, 1fr) 1.5fr;
     }
 }
 
 
-
-
-
-
-
 /*  UI Elements Design  */
 .buttonUi {
-    grid-column: 2/12;
     text-align: center;
     display: flex;
     align-items: center;

@@ -44,7 +44,7 @@ export default {
 
 /* Styling */
 .pictureStyle {
-    border: 15px solid #404040;
+    border: 10px solid #404040;
     background-color: #b7b7b7;
 }
 .aboutMe {
@@ -56,7 +56,7 @@ export default {
 /* Layout */ 
 .aboutMe {
     grid-template-rows: 140px 1fr;
-    height:850px;
+    height: 800px;
 }
 /* Title Text */
 .titleText {
@@ -119,12 +119,20 @@ picture img{
 }
 
 @media only screen and (min-width: 600px)  { 
+    /* Styling */
+    .pictureStyle {
+        border: 12px solid #404040;
+    }
     .aboutMe {
         height: 1000px;
     }
 }
 
 @media only screen and (min-width: 1200px)  { 
+    /* Styling */
+    .pictureStyle {
+        border: 15px solid #404040;
+    }
     .aboutMe {
         height: 800px;
     }

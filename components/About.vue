@@ -74,7 +74,7 @@ export default {
     grid-row: 2/6;
     display: grid;
     grid-template-columns: 0.5fr repeat(10, 1fr);
-    grid-template-rows: 4fr 4fr 2fr 1fr;
+    grid-template-rows: 4fr 4fr 2fr 2fr;
 }
     /* Picture Frame of Portait */
     .pictureStyle {
@@ -125,6 +125,11 @@ picture img{
     }
     .aboutMe {
         height: 1000px;
+    }
+    /* Layout */ 
+    .aboutMe > div:nth-child(2) {
+        grid-template-columns: 0.5fr repeat(10, 1fr);
+        grid-template-rows: 2fr 2fr 2fr 1fr;
     }
 }
 

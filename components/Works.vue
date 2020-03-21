@@ -43,7 +43,7 @@ export default {
             let cssStyle = "";
             cssStyle += "grid-column-start: 1;"
             cssStyle += "display: grid;";
-            cssStyle += "grid-template-rows: 140px  0.5fr 0.1fr repeat(7, 1fr);";
+            cssStyle += "grid-template-rows: 140px 100px 1fr 80px";
             return cssStyle;
         }
     }
@@ -112,29 +112,26 @@ export default {
 
 @media only screen and (min-width: 600px)  { 
     .works {
-         height: 1000px
+        height: 1000px;
     }
     .projectPreview {
         flex-basis: 49%;
+        height: auto;
     }
-}
 
-@media only screen and (min-width: 1000px)  { 
-    .works {
-         height: 1200px
-    }
-    .projectPreview {
-        flex-basis: 49%;
-    }
 }
 
 @media only screen and (min-width: 1200px)  { 
     .works {
-         height: 1500px
+         height: 1500px;
     }
     /* Projekt Portfolio size change to have space for categories */
     .projectPortfolio {
-        grid-row: 3 / 12;
+        grid-row: 3 / 4;
+        height: 1200px;
+    }
+    .projectPreview {
+        height: auto;
     }
     /* Catgory Picker */
     .categories {
@@ -151,12 +148,6 @@ export default {
     }
     .categories ul li {
         list-style-type: none;
-    }
-}
-
-@media only screen and (min-width: 1500px)  { 
-    .works {
-         height: 1800px
     }
 }
 </style>

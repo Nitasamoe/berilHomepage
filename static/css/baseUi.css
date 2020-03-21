@@ -9,18 +9,20 @@
     }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1200px) {
     .pageGrid {
-        grid-template-columns: 1.5fr repeat(10, 100px) 1.5fr;
+        grid-template-columns: 1.5fr repeat(10, 115px) 1.5fr;
     }
 }
 
+
+/*
 @media only screen and (min-width: 1500px) {
     .pageGrid {
         grid-template-columns: 1.5fr repeat(10, 130px) 1.5fr;
     }
 }
-
+*/
 
 
 /*  UI Elements Design  */

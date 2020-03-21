@@ -51,11 +51,4 @@ html {
     box-sizing: inherit;
 }
 
-   
-
-@media only screen and (min-width: 1400px)  { 
-
-}
-
-
 </style>

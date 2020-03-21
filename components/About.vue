@@ -111,6 +111,7 @@ export default {
     .whiteBack {
         grid-column: 1/13;
         grid-row: 2/5;
+        z-index: 5;
     }
 
 picture img{

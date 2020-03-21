@@ -23,7 +23,8 @@ module.exports = {
   },
   // Create base URL
   router: {
-    base: "./"
+    //base: "./"
+    base: "/"
     //base: process.env.DEPLOY_ENV === "GH_PAGES" ? "./" : "/" // add "./" before pushing to github pages
   },
   /*

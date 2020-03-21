@@ -56,7 +56,7 @@ export default {
 /* Layout */ 
 .aboutMe {
     grid-template-rows: 140px 1fr;
-    height: 800px;
+    height:850px;
 }
 /* Title Text */
 .titleText {
@@ -74,7 +74,7 @@ export default {
     grid-row: 2/6;
     display: grid;
     grid-template-columns: 0.5fr repeat(10, 1fr);
-    grid-template-rows: 1fr 3fr 2fr 1fr;
+    grid-template-rows: 4fr 4fr 2fr 1fr;
 }
     /* Picture Frame of Portait */
     .pictureStyle {

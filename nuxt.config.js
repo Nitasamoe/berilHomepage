@@ -23,7 +23,8 @@ module.exports = {
   },
   // Create base URL
   router: {
-    base: process.env.DEPLOY_ENV === "GH_PAGES" ? "./" : "/" // add "./" before pushing to github pages
+    base: "./"
+    //base: process.env.DEPLOY_ENV === "GH_PAGES" ? "./" : "/" // add "./" before pushing to github pages
   },
   /*
   ** Customize the progress-bar color

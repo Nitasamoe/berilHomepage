@@ -119,6 +119,14 @@ export default {
     }
 }
 
+@media only screen and (min-width: 1000px)  { 
+    .works {
+         height: 1200px
+    }
+    .projectPreview {
+        flex-basis: 49%;
+    }
+}
 
 @media only screen and (min-width: 1200px)  { 
     .works {

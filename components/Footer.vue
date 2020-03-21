@@ -1,6 +1,7 @@
 <template>
     <div class="footer pageGrid" :style="footerStyle">
         <div class="contactData">
+            <hr>
             <h2>Contact Me</h2>
             <p>fasfasf asfd asdfasdf a asdfasf</p>
             <p>fas a afasf asda</p>
@@ -20,7 +21,6 @@ export default {
             cssStyle += "grid-column-end: " + this.columnLength+ ";";
             cssStyle += "height:" + this.height + "px;";
             cssStyle += "display:grid;";
-            cssStyle += "display:grid;";
             cssStyle += "backgroundColor: #f4f4f4;";
             return cssStyle
         }
@@ -33,11 +33,23 @@ export default {
 @import '~/static/css/globalVariables.css';
 @import '~/static/css/baseUi.css';
 
+hr {
+    width: 100%;
+}
+
 .footer > div {
     grid-column: 2 / 12;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
 }
 
+@media only screen and (min-width: 600px)  { 
+    hr {
+        display: none;
+    }
+    .footer > div {
+        align-items: flex-end;
+    }
+}
 </style>

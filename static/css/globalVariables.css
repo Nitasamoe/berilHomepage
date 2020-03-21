@@ -1,6 +1,6 @@
 :root {
-    --fontMultiplicator: 1.3;
-    --baseTypeSize: 1.3em;
+    --fontMultiplicator: 1.1;
+    --baseTypeSize: 1em;
     --h4TypeSize: calc(var(--baseTypeSize)*var(--fontMultiplicator));
     --h3TypeSize: calc(var(--h4TypeSize)*var(--fontMultiplicator));
     --h2TypeSize: calc(var(--h3TypeSize)*var(--fontMultiplicator));
@@ -12,4 +12,19 @@
     --mainFont:'Fira Sans', sans-serif;
     --displayFont:'Poppins', sans-serif;
 
+}
+
+@media only screen and (min-width: 600px)  { 
+    :root {
+        --fontMultiplicator: 1.2;
+        --baseTypeSize: 1.2em;
+    }
+}
+
+
+@media only screen and (min-width: 1200px)  { 
+    :root {
+        --fontMultiplicator: 1.25;
+        --baseTypeSize: 1.2em;
+    }
 }

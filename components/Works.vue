@@ -7,7 +7,7 @@
             <ul>
                 <li v-for="category in categories" :key="category.id">
                     <div class="buttonUi">
-                        <button><h4>{{category}}</h4></button>
+                        <button><p>{{category}}</p></button>
                     </div>
                 </li>
             </ul>
@@ -17,6 +17,7 @@
                 <div></div>
                 <div>
                     <h4>{{ project.name }}</h4>
+                    <p>{{ project.shortDescr }}</p>
                 </div>
             </div>
         </div>
@@ -41,7 +42,6 @@ export default {
         worksStyle(){
             let cssStyle = "";
             cssStyle += "grid-column-start: 1;"
-            cssStyle += "height:" + this.height + "px;"
             cssStyle += "display: grid;";
             cssStyle += "grid-template-rows: 140px  0.5fr 0.1fr repeat(7, 1fr);";
             return cssStyle;
@@ -55,60 +55,23 @@ export default {
 @import '~/static/css/globalVariables.css';
 @import '~/static/css/baseUi.css';
 
+/* Styling */
 .works {
     background-color: #f4f4f4;
 }
-
-.categories {
-    grid-column: 4 / 10;
-}
-.categories ul {
-    display: flex;
-    height: 100%;
-    padding: 0px;
-    margin: 0px;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.categories ul li {
-    list-style-type: none;
-}
-
-.projectPortfolio {
-    grid-column: 2 / 12;
-    grid-row: 4 / 11;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-}
-
-.projectPortfolio > div {
-    flex-basis: 49%;
-    height: 47%;
+.projectPreview {
     background-color: #b7b7b7;
 }
-
-h1 {
-    text-align: center;
-    grid-column: 2/12;
-}
-
-.projectPreview {
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: 1fr;
-}
-
 .projectPreview div:nth-child(2) {
-    grid-row: 4/5;
-    grid-column: 1/2;
     background-color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 
+/* Layout */
+
+/* Title Text */
+.works {
+    height: 1800px
+}
 .titleText {
     text-align: center;
     grid-column: 2/12;
@@ -117,6 +80,75 @@ h1 {
     align-items: center;
 }
 
+/* Catgory Picker */
+.categories {
+    display: none;
+}
+
+/* Portoflio übersicht Div */
+.projectPortfolio {
+    grid-column: 2 / 12;
+    grid-row: 2 / 11;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+    .projectPreview {
+        flex-basis: 98%;
+        height: auto;
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 1fr;
+    }
+    .projectPreview div:nth-child(2) {
+        grid-row: 4/5;
+        grid-column: 1/2;
+        display: flex;
+        align-items: center;
+        flex-flow: column nowrap;
+        padding-top: 10px;
+    }
+
+@media only screen and (min-width: 600px)  { 
+    .works {
+         height: 1000px
+    }
+    .projectPreview {
+        flex-basis: 49%;
+    }
+}
 
 
+@media only screen and (min-width: 1200px)  { 
+    .works {
+         height: 1500px
+    }
+    /* Projekt Portfolio size change to have space for categories */
+    .projectPortfolio {
+        grid-row: 3 / 12;
+    }
+    /* Catgory Picker */
+    .categories {
+        display: inline-block;
+        grid-column: 4 / 10;
+    }
+    .categories ul {
+        display: flex;
+        height: 100%;
+        padding: 0px;
+        margin: 0px;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .categories ul li {
+        list-style-type: none;
+    }
+}
+
+@media only screen and (min-width: 1500px)  { 
+    .works {
+         height: 1800px
+    }
+}
 </style>

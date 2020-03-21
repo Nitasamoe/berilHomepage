@@ -26,7 +26,7 @@ export default {
   },
   data() {
     return  {
-      'headerHeight' : 80,
+      'headerHeight' : 60,
       'layoutColumns' : 12
     }
   },

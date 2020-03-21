@@ -1,7 +1,7 @@
 <template>
     <div class="aboutMe pageGrid" :style="aboutMeStyle">
         <div class="titleText">
-            <h1>About Me</h1>
+            <!--<h1>About Me</h1>-->
         </div>
         <div>
             <div class="pictureStyle">
@@ -10,13 +10,14 @@
                     <!--<img src="~/static/AboutMe_Picture.png" alt="The Picture of Beril Beden"> -->
                 </picture>
             </div>
-            
-            <div class="buttonUi">
-                    <button><h4>Download CV</h4></button>
-            </div>
             <div class="aboutMeText">
                     <h4> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</h4>
                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="buttonUi">
+                    <button><p>Download CV</p></button>
+            </div>
+            <div class="whiteBack">
             </div>              
         </div>
     </div>    
@@ -49,17 +50,13 @@ export default {
 .aboutMe {
     background-color: #f4f4f4;
 }
-.buttonUi {
-    background-color: white;
-}
-
-.aboutMeText {
+.whiteBack {
     background-color: white;
 }
 /* Layout */ 
 .aboutMe {
     grid-template-rows: 140px 1fr;
-    height: 1200px;
+    height: 800px;
 }
 /* Title Text */
 .titleText {
@@ -77,78 +74,80 @@ export default {
     grid-row: 2/6;
     display: grid;
     grid-template-columns: 0.5fr repeat(10, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: 1fr 3fr 2fr 1fr;
 }
     /* Picture Frame of Portait */
     .pictureStyle {
         grid-column: 3 / 10;
-        grid-row: 1 / 5;
+        grid-row: 1 / 3;
         overflow: hidden;
         z-index: 10;
     }
     /* Text Box with 2 Texts*/
     .aboutMeText {
         grid-column: 1/12;
-        grid-row: 2/7;
+        grid-row: 3/4;
         display: grid;
         grid-template-columns: 5% 1fr 5%;
-        grid-template-rows: 60% 1fr 2fr 1%;
+        grid-template-rows: 5% 1fr 1fr 5%;
+        z-index: 10;
     }
         /* Text Top*/
+        .aboutMeText > h4 {
+            grid-column: 2/2;
+            grid-row: 2/3;
+        }
+        /* Text Bottom*/
         .aboutMeText > p {
             grid-column: 2/2;
             grid-row: 3/4;
             padding-top: 1%;
         }
-        /* Text Bottom*/
-        .aboutMeText > h4 {
-            grid-column: 2/2;
-            grid-row: 2/3;
-        }
     .buttonUi {
-        grid-row: 7/8;
+        grid-column: 1/12;
+        grid-row: 4/5;
+        z-index: 10;
     }
-
-
-
-
+    .whiteBack {
+        grid-column: 1/13;
+        grid-row: 2/5;
+    }
 
 picture img{
     width: 100%;
 }
 
-
-.buttonUi {
-       grid-column: 1/12;
+@media only screen and (min-width: 600px)  { 
+    .aboutMe {
+        height: 1000px;
+    }
 }
 
 @media only screen and (min-width: 1200px)  { 
     .aboutMe {
-        grid-template-rows: 140px 1fr;
-        height: 1000px;
+        height: 800px;
     }
+    /* div with picture, text and button */
+    .aboutMe > div:nth-child(2) {
+        grid-template-rows: 1fr 4fr 2fr;
+    }
+        /* Picture Frame of Portait */
+        .pictureStyle {
+            grid-column: 1 / 6;
+            grid-row: 1 / 3;
+        }
+        /* Text Box with 2 Texts*/
+        .aboutMeText {
+            grid-column: 6/12;
+            grid-row: 2/3;
+        }
     .buttonUi {
-       grid-column: 2/12;
-    }
-    .aboutMeText {
-        grid-column: 6/12;
-        grid-row: 2/7;
-        display:grid;
-        grid-template-rows: 5% 1fr 2fr 5%;
-    }
-    .pictureStyle {
-        grid-column: 1 / 6;
-        grid-row: 1 / 7;
-    }
-    .aboutMeText > p {
-        grid-column: 2/2;
+        grid-column: 2/12;
         grid-row: 3/4;
-        padding-top: 1%;
     }
-    .aboutMeText > h4 {
-        grid-column: 2/2;
-        grid-row: 2/3;
+    .whiteBack {
+        grid-column: 2 / 12;
+        grid-row: 2 / 4;
     }
 }
-
 </style>

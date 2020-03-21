@@ -70,7 +70,7 @@ export default {
 
 /* Title Text */
 .works {
-    height: 1800px
+    height: 1800px;
 }
 .titleText {
     text-align: center;
@@ -116,9 +116,8 @@ export default {
     }
     .projectPreview {
         flex-basis: 49%;
-        height: auto;
+        height: 400px;
     }
-
 }
 
 @media only screen and (min-width: 1200px)  { 

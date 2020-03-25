@@ -7,18 +7,18 @@
                 <li class="hrLi"><hr></li>
                 <li><a href="#">Home</a></li>
                 <li class="hrLi"><hr></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="./#about">About</a></li>
                 <li class="hrLi"><hr></li>
-                <li><a href="#work">Work</a></li>
+                <li><a href="./#work">Work</a></li>
                 <li class="hrLi"><hr></li>
-                <li><a href="#about">CV</a></li>
+                <li><a href="./#about">CV</a></li>
                 <li class="hrLi"><hr></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="./#contact">Contact</a></li>
             </ul>
         </nav>
-        <a href="#main-menu-toggle" class="menu-close"  aria-label="close main menu">
+        <a href="./#main-menu-toggle" class="menu-close"  aria-label="close main menu">
         </a>
-        <a href="#main-menu" class="menu-toggle" id="main-menu-toggle" aria-label="open main menu">
+        <a href="./#main-menu" class="menu-toggle" id="main-menu-toggle" aria-label="open main menu">
             <div class="burger">
                 <hr>
                 <hr>
@@ -26,7 +26,7 @@
             </div>  
             <!--<font-awesome-icon aria-hidden="true" :icon="['fas', 'bars']"/>-->
         </a>
-        <a href="#main-menu-toggle" class="backdrop" hidden tabindex="-1"></a>
+        <a href="./#main-menu-toggle" class="backdrop" hidden tabindex="-1"></a>
 
     </header>    
 </template>

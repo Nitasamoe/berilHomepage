@@ -3,9 +3,9 @@
         <BerilBeden class="logo" />
         <nav id="main-menu" class="main-menu" aria-label="main menu">
             <ul>
-                <li><a href="#">beril beden</a></li>
+                <li><a href="berilHomepage/#">beril beden</a></li>
                 <li class="hrLi"><hr></li>
-                <li><a href="#">Home</a></li>
+                <li><a href="berilHomepage/#">Home</a></li>
                 <li class="hrLi"><hr></li>
                 <li><a href="berilHomepage/#about">About</a></li>
                 <li class="hrLi"><hr></li>
@@ -82,7 +82,7 @@ a {
 }
 #main-menu:target + .menu-close {
     display: block;
-    height: 100%;
+    height: 2000px;
     width: 100%;
     left: 0;
     z-index: 1001;

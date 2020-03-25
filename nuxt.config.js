@@ -1,3 +1,4 @@
+const URL = 'http://localhost:3100'
 
 module.exports = {
   mode: 'universal',
@@ -54,12 +55,32 @@ module.exports = {
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    // https://medium.com/@kozyreva.hanna/nuxt-js-fontawesome-integration-7ec56b1a41c8
+    [
+      'nuxt-fontawesome', {
+        imports: [
+         {
+           set: '@fortawesome/free-solid-svg-icons',
+           icons: ['fas']
+         },
+         {
+           set:'@fortawesome/free-brands-svg-icons',
+           icons: ['fab']
+         }
+       ]
+      }
+    ]
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxy: true,
+    baseURL: URL
+  },
+  proxy : {
+    "/api": URL
   },
   /*
   ** Build configuration

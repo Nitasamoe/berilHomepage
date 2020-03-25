@@ -7,7 +7,7 @@
             <ul>
                 <li v-for="category in categories" :key="category.id">
                     <div class="buttonUi">
-                        <button><p>{{category}}</p></button>
+                        <button><p>{{category.title}}</p></button>
                     </div>
                 </li>
             </ul>
@@ -26,15 +26,14 @@
 
 <script>
 export default {
-    props: ['columnLength', 'height'],
+    props: ['columnLength', 'height', 'categories'],
     data(){
         return {
-            categories: ['Product Service', 'Design Research', 'Interior'],
             projects: [
-                {"name": "Super Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id":1},
-                {"name": "Super Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id":2},
-                {"name": "Super Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id":3},
-                {"name": "Super Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id":4}
+                {"name": "Super Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id": 1},
+                {"name": "Super Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id": 2},
+                {"name": "Super Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id": 3},
+                {"name": "Super Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id": 4}
             ]
         }
     },
@@ -115,7 +114,7 @@ export default {
         height: 1000px;
     }
     .projectPreview {
-        flex-basis: 49%;
+        flex-basis: 48%;
         height: 400px;
     }
 }

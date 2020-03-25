@@ -8,7 +8,7 @@
         <div>
             <picture>
                 <!-- <source srcset="~/static/AboutMe_Picture.png" media="(win-width: 100px)"> -->
-                <img src="~/assets/heroBackW.png" alt="The Picture of Beril Beden">
+                <!--<img src="~/assets/heroBackW.png" alt="The Picture of Beril Beden">-->
             </picture>
         </div>
     </div>    
@@ -95,7 +95,7 @@ img {
 
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1400px) {
    img {
        width: 70%;
    }

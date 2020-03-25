@@ -1,10 +1,10 @@
 <template>
   <div class="pageGrid">
-    <Header :columnLength="layoutColumns+1" :height="headerHeight"></Header>
+    <Header />
     <Hero :columnLength="layoutColumns+1" :height="800"></Hero>
-    <About></About>
-    <Works :columnLength="layoutColumns+1" :height="1800"></Works>
-    <Footer :columnLength="layoutColumns+1" :height="300"></Footer>
+    <About id="about"></About>
+    <Works id="work" :columnLength="layoutColumns+1" :categories="categories" :height="1800"></Works>
+    <Footer id="contact" :columnLength="layoutColumns+1" :height="300"></Footer>
 
   </div>
 </template>
@@ -30,9 +30,20 @@ export default {
       'layoutColumns' : 12
     }
   },
-  methods: {
-  },
-  computed: {
+  async asyncData({$axios}) {
+      try {
+          let response = await $axios.$get('/api/category');
+          console.log(response.category);
+          return {
+              categories: response.category
+          }
+          } catch (err) {
+          console.log("#####################");
+          console.log("Error while retrieving Data from API");
+          return {
+              categories: [{"title":"interior"}, {"title":"Design Research"}, {"title":"Fun"}]  
+          }
+      }
   }
 }
 </script>

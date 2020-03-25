@@ -9,7 +9,10 @@
 
     --mainColor:black;
 
-    --mainFont:'Fira Sans', sans-serif;
+    --mainFont: 'Fira Sans', sans-serif;
+    --mainFontSize: 28px;
+    --mainFontWeight: 500;
+    --mainFontStyle: normal;
     --displayFont:'Poppins', sans-serif;
 
 }

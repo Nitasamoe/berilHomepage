@@ -80,7 +80,6 @@ export default {
     .pictureStyle {
         grid-column: 3 / 10;
         grid-row: 1 / 3;
-        overflow: hidden;
         z-index: 1005;
     }
     /* Text Box with 2 Texts*/

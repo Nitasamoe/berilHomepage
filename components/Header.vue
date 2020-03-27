@@ -3,22 +3,22 @@
         <BerilBeden class="logo" />
         <nav id="main-menu" class="main-menu" aria-label="main menu">
             <ul>
-                <li><a href="berilHomepage/#">beril beden</a></li>
+                <li><a :href="baseUrl+'#'">beril beden</a></li>
                 <li class="hrLi"><hr></li>
-                <li><a href="berilHomepage/#">Home</a></li>
+                <li><a :href="baseUrl+'#'">Home</a></li>
                 <li class="hrLi"><hr></li>
-                <li><a href="berilHomepage/#about">About</a></li>
+                <li><a :href="baseUrl+'#about'">About</a></li>
                 <li class="hrLi"><hr></li>
-                <li><a href="berilHomepage/#work">Work</a></li>
+                <li><a :href="baseUrl+'#work'">Work</a></li>
                 <li class="hrLi"><hr></li>
-                <li><a href="berilHomepage/#about">CV</a></li>
+                <li><a :href="baseUrl+'#about'">CV</a></li>
                 <li class="hrLi"><hr></li>
-                <li><a href="berilHomepage/#contact">Contact</a></li>
+                <li><a :href="baseUrl+'#contact'">Contact</a></li>
             </ul>
         </nav>
-        <a href="berilHomepage/#main-menu-toggle" class="menu-close"  aria-label="close main menu">
+        <a :href="baseUrl+'#main-menu-toggle'" class="menu-close"  aria-label="close main menu">
         </a>
-        <a href="berilHomepage/#main-menu" class="menu-toggle" id="main-menu-toggle" aria-label="open main menu">
+        <a :href="baseUrl+'#main-menu'" class="menu-toggle" id="main-menu-toggle" aria-label="open main menu">
             <div class="burger">
                 <hr>
                 <hr>
@@ -26,7 +26,7 @@
             </div>  
             <!--<font-awesome-icon aria-hidden="true" :icon="['fas', 'bars']"/>-->
         </a>
-        <a href="berilHomepage/#main-menu-toggle" class="backdrop" hidden tabindex="-1"></a>
+        <a :href="baseUrl+'#main-menu-toggle'" class="backdrop" hidden tabindex="-1"></a>
 
     </header>    
 </template>
@@ -38,11 +38,21 @@ export default {
     props: ['columnLength', 'height'],
     components: {
         BerilBeden
+    },
+    data() {
+        return {
+            baseUrl: "/berilHomepage/"
+        }
     }
+
 }
 </script>
 
 <style scoped>
+/* Properties */
+.navBar {
+    --navBarHeigth: 90px;
+}
 
 /* Styles */
 * {
@@ -60,48 +70,23 @@ a {
     text-transform: uppercase;
     color: #E8E8E8;
 }
-
-/* Layout */
-.navBar {
-    display: grid;
-    grid-template-columns: 15% 1fr 1fr 15%;
-    grid-template-rows: 90px;
+:focus {
+    outline: 0;
+}
+ul hr {
+    color: #707070;
+}
+/* ==============Logo=================== */
+#main-menu > ul > li:nth-child(1) a{
+    color: #707070;
+    font-family: var(--mainFont);
+    font-weight: 800;
+    text-transform: none;
 }
 .logo {
     display: none;
 }
-.menu-toggle {
-    grid-column: 4/5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.menu-close {
-    display: none;
-    position: absolute;
-}
-#main-menu:target + .menu-close {
-    display: block;
-    height: 2000px;
-    width: 100%;
-    left: 0;
-    z-index: 1001;
-}
-
-#main-menu:target ~ .menu-toggle .burger > hr:nth-child(1) {
-    transform: rotate(45deg) translateX(0px);
-}
-#main-menu:target ~ .menu-toggle .burger > hr:nth-child(2) {
-    display: none;
-}
-#main-menu:target ~ .menu-toggle .burger > hr:nth-child(3) {
-    transform: rotate(-45deg) translateX(0px);
-}
-.burger > hr {
-    height: 30px;
-    position: absolute;
-    color: #909090;
-}
+/* ==============Burger=================== */
 .burger > hr:nth-child(1) {
     transform: rotate(90deg) translateX(10px);
 }
@@ -111,6 +96,47 @@ a {
 .burger > hr:nth-child(3) {
     transform: rotate(90deg) translateX(-10px);
 }
+.burger > hr {
+    height: 30px;
+    position: absolute;
+    color: #909090;
+}
+#main-menu:target ~ .menu-toggle .burger > hr:nth-child(1) {
+    transform: rotate(45deg) translateX(0px);
+}
+#main-menu:target ~ .menu-toggle .burger > hr:nth-child(2) {
+    display: none;
+}
+#main-menu:target ~ .menu-toggle .burger > hr:nth-child(3) {
+    transform: rotate(-45deg) translateX(0px);
+}
+
+/* =========================================== */
+/* ==================Layout=================== */
+/* =========================================== */
+.navBar {
+    display: grid;
+    grid-template-columns: 15% 1fr 1fr 15%;
+    grid-template-rows: var(--navBarHeigth);
+}
+/* Burger Menu */
+.menu-toggle {
+    grid-column: 4/5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The Menu List */
+.main-menu {
+    position: absolute;
+    background-color: #3E3E3E;
+    width: 75%;
+    height: 2500px;
+    left: -75%;
+    -webkit-transform: translate3d(0, 0, 1002px);
+    transform: translate3d(0, 0, 1002px);
+}
 .main-menu ul {
     display: flex;
     flex-flow: row wrap;
@@ -118,30 +144,30 @@ a {
 }
 li {
     flex-basis: 75%;
-}
-.main-menu {
-    position: absolute;
-    background-color: #3E3E3E;
-    width: 75%;
-    height: 100%;
-    left: -75%;
-    z-index: 1002;
-}
-li {
     padding-top: 35px;
 }
 .main-menu:target{
     left: 0;
+    position: fixed;
 }
-#main-menu > ul > li:nth-child(1) a{
-    color: #707070;
-    font-family: var(--mainFont);
-    font-weight: 800;
-    text-transform: none;
+
+/* Backdrop to unclick menu */
+.menu-close {
+    display: none;
+    position: absolute;
 }
-ul hr {
-    color: #707070;
+#main-menu:target + .menu-close {
+    display: block;
+    position: fixed;
+    height: 2000px;
+    width: 100%;
+    left: 0;
+    -webkit-transform: translate3d(0, 0, 1001px);
+    transform: translate3d(0, 0, 1001px);
 }
+
+
+
 
 @media only screen and (min-width: 600px) {
     /* hide first element on big screen cause logo will appear */
@@ -155,10 +181,10 @@ ul hr {
     .main-menu {
             grid-column: 3 / 4;
             position: relative;
-            display: inline;
+            display: block;
             background-color: transparent;
-            width: auto;
             left: 0;
+            height: var(--navBarHeigth);
     }
 
     li {

@@ -80,7 +80,8 @@ export default {
     .pictureStyle {
         grid-column: 3 / 10;
         grid-row: 1 / 3;
-        z-index: 1005;
+        -webkit-transform: translate3d(0, 0, 500px);
+        transform: translate3d(0, 0, 500px);
     }
     /* Text Box with 2 Texts*/
     .aboutMeText {
@@ -89,7 +90,8 @@ export default {
         display: grid;
         grid-template-columns: 5% 1fr 5%;
         grid-template-rows: 5% 1fr 1fr 5%;
-        z-index: 10;
+        -webkit-transform: translate3d(0, 0, 200px);
+        transform: translate3d(0, 0, 200px);
     }
         /* Text Top*/
         .aboutMeText > h4 {
@@ -105,12 +107,14 @@ export default {
     .buttonUi {
         grid-column: 1/12;
         grid-row: 4/5;
-        z-index: 10;
+        -webkit-transform: translate3d(0, 0, 500px);
+        transform: translate3d(0, 0, 500px);
     }
     .whiteBack {
         grid-column: 1/13;
         grid-row: 2/5;
-        z-index: 5;
+        -webkit-transform: translate3d(0, 0, 500px);
+        transform: translate3d(0, 0, 100px);
     }
 
 picture img{

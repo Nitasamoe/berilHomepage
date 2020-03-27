@@ -82,6 +82,7 @@ export default {
         grid-row: 1 / 3;
         -webkit-transform: translate3d(0, 0, 500px);
         transform: translate3d(0, 0, 500px);
+        z-index: 500;
     }
     /* Text Box with 2 Texts*/
     .aboutMeText {
@@ -92,6 +93,7 @@ export default {
         grid-template-rows: 5% 1fr 1fr 5%;
         -webkit-transform: translate3d(0, 0, 200px);
         transform: translate3d(0, 0, 200px);
+        z-index: 200;
     }
         /* Text Top*/
         .aboutMeText > h4 {
@@ -109,12 +111,14 @@ export default {
         grid-row: 4/5;
         -webkit-transform: translate3d(0, 0, 500px);
         transform: translate3d(0, 0, 500px);
+        z-index: 500;
     }
     .whiteBack {
         grid-column: 1/13;
         grid-row: 2/5;
-        -webkit-transform: translate3d(0, 0, 500px);
+        -webkit-transform: translate3d(0, 0, 100px);
         transform: translate3d(0, 0, 100px);
+        z-index: 100;
     }
 
 picture img{

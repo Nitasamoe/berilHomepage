@@ -136,6 +136,7 @@ ul hr {
     left: -75%;
     -webkit-transform: translate3d(0, 0, 1002px);
     transform: translate3d(0, 0, 1002px);
+    z-index: 1002;
 }
 .main-menu ul {
     display: flex;
@@ -164,6 +165,7 @@ li {
     left: 0;
     -webkit-transform: translate3d(0, 0, 1001px);
     transform: translate3d(0, 0, 1001px);
+    z-index: 1001;
 }
 
 
@@ -185,6 +187,7 @@ li {
             background-color: transparent;
             left: 0;
             height: var(--navBarHeigth);
+            width: 100%;
     }
 
     li {

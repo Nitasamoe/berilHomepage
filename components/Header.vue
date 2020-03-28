@@ -37,7 +37,7 @@ export default {
     },
     data() {
         return {
-            baseUrl: process.env.DEPLOY_ENV === "GH_PAGES" ? "/berilHomepage/" : "/"
+            baseUrl: true ? "/berilHomepage/" : "/"
         }
     }
 }

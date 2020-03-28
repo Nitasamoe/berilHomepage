@@ -143,14 +143,14 @@ picture img{
 @media only screen and (min-width: 1200px)  { 
     /* Styling */
     .pictureStyle {
-        border: 15px solid #404040;
+        border: 0px solid #404040;
     }
     .aboutMe {
         height: 800px;
     }
     /* div with picture, text and button */
     .aboutMe > div:nth-child(2) {
-        grid-template-rows: 1fr 4fr 2fr;
+        grid-template-rows: 1fr 4fr 120px;
     }
         /* Picture Frame of Portait */
         .pictureStyle {

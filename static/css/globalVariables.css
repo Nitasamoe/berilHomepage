@@ -9,7 +9,7 @@
 
     --mainColor:black;
 
-    --mainFont: 'Fira Sans', sans-serif;
+    --mainFont: 'Open Sans', sans-serif;
     --mainFontSize: 28px;
     --mainFontWeight: 500;
     --mainFontStyle: normal;
@@ -27,7 +27,7 @@
 
 @media only screen and (min-width: 1200px)  { 
     :root {
-        --fontMultiplicator: 1.25;
+        --fontMultiplicator: 1.50;
         --baseTypeSize: 1.2em;
     }
 }

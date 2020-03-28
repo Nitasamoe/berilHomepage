@@ -1,7 +1,7 @@
 <template>
     <div class="works pageGrid" :style="worksStyle">
         <div class="titleText">
-            <h1>Works</h1>
+            <h2>Works</h2>
         </div>
         <div class="categories">
             <ul>
@@ -16,8 +16,10 @@
             <div class="projectPreview" v-for="project in projects" :key="project.id">
                 <div></div>
                 <div>
-                    <h4>{{ project.name }}</h4>
-                    <p>{{ project.shortDescr }}</p>
+                    <div class="textHolder">
+                        <h4 class="headline">{{ project.name }}</h4>
+                        <p>{{ project.shortDescr }}</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -57,6 +59,7 @@ export default {
 /* Styling */
 .works {
     background-color: #f4f4f4;
+    padding-top: 100px;
 }
 .projectPreview {
     background-color: #b7b7b7;
@@ -78,7 +81,17 @@ export default {
     justify-content: space-around;
     align-items: center;
 }
-
+.headline { /* bigger text */
+    font-size: 25px;
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--mainFont);
+    font-style: normal;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 1.4;
+    color: #262626;
+}
 /* Catgory Picker */
 .categories {
     display: none;
@@ -106,8 +119,12 @@ export default {
         display: flex;
         align-items: center;
         flex-flow: column nowrap;
+        justify-items: center;
         padding-top: 10px;
     }
+        .textHolder {
+            
+        }
 
 @media only screen and (min-width: 600px)  { 
     .works {

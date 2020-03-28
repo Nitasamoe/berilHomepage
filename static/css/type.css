@@ -2,33 +2,36 @@ h1 {
     font-size: var(--h1TypeSize);
     margin: 0px;
     padding: 0px;
-    font-family: var(--displayFont);
+    font-family: var(--mainFont);
     font-style: normal;
 }
 h2 {
     font-size: var(--h2TypeSize);
     margin: 0px;
     padding: 0px;
+    font-weight: 100;
     font-family: var(--mainFont);
     font-style: normal;
 }
 h3 {
-    font-size: var(--h3TypeSize);
+    font-size: 50px;
     font-style: normal;
-    font-weight: 700;
+    color: #262626;
+    font-weight: 300;
     margin: 0px;
     padding: 0px;
     font-family: var(--mainFont);
 }
 h4 { /* bigger text */
-    font-size: var(--h4TypeSize);
+    font-size: 35px;
     margin: 0px;
     padding: 0px;
     font-family: var(--mainFont);
     font-style: normal;
-    font-weight: 400;
-    text-transform: uppercase;
-    line-height: 2;
+    font-weight: 300;
+    text-transform: none;
+    line-height: 1.4;
+    color: #262626;
 }
 p { /* text for writing normal content */
     font-size: var(--baseTypeSize);
@@ -37,5 +40,6 @@ p { /* text for writing normal content */
     font-family: var(--mainFont);
     font-style: normal;
     font-weight: 200;
-    color: black;
+    color: #878787;
+    line-height: 1.3;
 }

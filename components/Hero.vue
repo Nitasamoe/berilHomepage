@@ -2,8 +2,8 @@
     <div class="hero" :style="heroStyle">
     <!--<div v-bind:style="{ backgroundImage: 'url(' + require('~/assets/heroBack.png') + ')'}">-->
         <div class="heroText">
-            <h1>Beril Beden</h1>
-            <h3>Never Stop never stopping</h3>
+            <h3>Service Designer</h3>
+            <p class="subtitle">I'm Beril Beden, a designer driving business solutions through user needs</p>
         </div>
         <div>
             <picture>
@@ -40,6 +40,12 @@ export default {
 
 
 /* CCS for all Sizes and Mobile */ 
+.subtitle {
+    font-size: 30px;
+    color: #878787;
+    margin-top: 5px;
+}
+
 img {
     width: 100%;
 }
@@ -71,7 +77,7 @@ img {
 }
 @media only screen and (min-width: 1200px) {
     .heroText {
-        grid-column: 2/4;
+        grid-column: 2/6;
         grid-row: 2/4;
         display: flex;
         justify-content: center;

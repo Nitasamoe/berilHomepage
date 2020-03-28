@@ -19,6 +19,7 @@ module.exports = {
       { type: 'stylesheet', href: '/css/globalVariables.css' },
       { type: 'stylesheet', href: '/css/baseUi.css' },
       { type: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Fira+Sans&display=swap' },
+      { type: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap' },
       { type: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Poppins&display=swap' }
     ]
   },

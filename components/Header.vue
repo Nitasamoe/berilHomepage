@@ -3,15 +3,11 @@
         <BerilBeden class="logo" />
         <nav id="main-menu" class="main-menu" aria-label="main menu">
             <ul>
-                <li><a :href="baseUrl+'#'">beril beden</a></li>
-                <li class="hrLi"><hr></li>
-                <li><a :href="baseUrl+'#'">Home</a></li>
+                <li><a :href="baseUrl+'#'">Menu</a></li>
                 <li class="hrLi"><hr></li>
                 <li><a :href="baseUrl+'#about'">About</a></li>
                 <li class="hrLi"><hr></li>
                 <li><a :href="baseUrl+'#work'">Work</a></li>
-                <li class="hrLi"><hr></li>
-                <li><a :href="baseUrl+'#about'">CV</a></li>
                 <li class="hrLi"><hr></li>
                 <li><a :href="baseUrl+'#contact'">Contact</a></li>
             </ul>
@@ -41,10 +37,9 @@ export default {
     },
     data() {
         return {
-            baseUrl: "/berilHomepage/"
+            baseUrl: process.env.DEPLOY_ENV === "GH_PAGES" ? "/berilHomepage/" : "/"
         }
     }
-
 }
 </script>
 
@@ -68,13 +63,13 @@ a {
     font-size: 1.2rem;
     font-weight: 200;
     text-transform: uppercase;
-    color: #E8E8E8;
+    color: #c2c2c2;
 }
 :focus {
     outline: 0;
 }
 ul hr {
-    color: #707070;
+    color: #4f4f4f;
 }
 /* ==============Logo=================== */
 #main-menu > ul > li:nth-child(1) a{
@@ -110,7 +105,9 @@ ul hr {
 #main-menu:target ~ .menu-toggle .burger > hr:nth-child(3) {
     transform: rotate(-45deg) translateX(0px);
 }
+.hrLi {
 
+}
 /* =========================================== */
 /* ==================Layout=================== */
 /* =========================================== */
@@ -178,14 +175,16 @@ li {
     }
 
     .navBar {
-        grid-template-columns: 2% 1fr 2fr 2%;
+        grid-template-columns: 2% 1.5fr 300px 2%;
+    }
+    .main-menu:target{
+        position: static;
     }
     .main-menu {
             grid-column: 3 / 4;
-            position: relative;
+            position: static;
             display: block;
             background-color: transparent;
-            left: 0;
             height: var(--navBarHeigth);
             width: 100%;
     }
@@ -225,7 +224,7 @@ li {
 
 @media only screen and (min-width: 1000px) {
     .navBar {
-        grid-template-columns: 2% 1fr 1fr 2%;
+        grid-template-columns: 2% 1fr 400px 2%;
     }
 }
 

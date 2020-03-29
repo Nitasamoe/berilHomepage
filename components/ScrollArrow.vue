@@ -1,5 +1,5 @@
 <template>
-    <a href="/berilHomepage/#">
+    <a href="#">
         <svg :style="arrowStyle" class="section" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="53px" height="20px" viewBox="0 0 53 20">
                 <polygon points="43.886,16.221 42.697,17.687 26.5,4.731 10.303,17.688 9.114,16.221 26.5,2.312"></polygon>
         </svg>

@@ -30,7 +30,7 @@ export default {
     },
     data() {
         return {
-            baseUrl: false ? "/berilHomepage/" : "/",
+            baseUrl: true ? "/berilHomepage/" : "/",
             burgerActive : false
         }
     }

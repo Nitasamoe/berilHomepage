@@ -58,16 +58,4 @@ svg {
   transition: all 0.5s;
   transform-origin: 50% 50%;
 }
-.NuxtLogo {
-  animation: 1s appear;
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 </style>

@@ -22,14 +22,15 @@ module.exports = {
       { type: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap' },
       { type: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Poppins&display=swap' }
     ]
-  },
+  },/*
   generate: {
     subFolders: true
-  },
+  },*/
   // Create base URL
   router: {
     //base: "./"
     base: "/berilHomepage/"
+    //base: "./"
     //base: process.env.DEPLOY_ENV === "GH_PAGES" ? "./" : "/" // add "./" before pushing to github pages
   },
   /*

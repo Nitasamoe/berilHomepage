@@ -30,11 +30,11 @@ export default {
     },
     beforeMount() {
         console.log("Before mount");
-        window.addEventListener('scroll', this.handleScroll);
+        document.addEventListener('scroll', this.handleScroll);
     },
     beforeDestroy() {
         console.log("Before destroy");
-        window.addEventListener('scroll', this.handleScroll);
+        document.addEventListener('scroll', this.handleScroll);
     }
 }
 </script>

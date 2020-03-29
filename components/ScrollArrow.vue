@@ -52,7 +52,7 @@ svg {
     width: 100px;
 }
 .section:hover {
-  /*transform: scale(1.1);*/
+  transform: scale(1.1);
 }
 .section {
   transition: all 0.5s;

@@ -119,9 +119,17 @@ export default {
 
 @media only screen and (min-width: 1200px)  { 
     /* Catgory Picker */
+    .works {
+        grid-template-rows: 50px 100px 90px 1fr 100px;
+    }
     .categories {
         display: inline-block;
         grid-column: 4 / 10;
+        grid-row: 3/4;
+
+    }
+    .projectPortfolio {
+        grid-row: 4 / 5;
     }
     .categories ul {
         display: flex;

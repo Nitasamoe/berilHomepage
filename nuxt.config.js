@@ -23,6 +23,9 @@ module.exports = {
       { type: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Poppins&display=swap' }
     ]
   },
+  generate: {
+    subFolders: true
+  },
   // Create base URL
   router: {
     //base: "./"

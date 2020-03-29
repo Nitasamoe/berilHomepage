@@ -36,7 +36,7 @@ img {
 }
 
 .heroText {
-    grid-column: 1/13;
+    grid-column: 3/11;
     grid-row: 2/3;
     display: flex;
     justify-content: center;

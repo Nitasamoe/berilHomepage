@@ -1,11 +1,11 @@
 <template>
   <div class="pageGrid">
     <Header />
-    <Hero :columnLength="layoutColumns+1" :height="800"></Hero>
+    <Hero />
     <About id="about"></About>
     <Works id="work" :columnLength="layoutColumns+1" :categories="categories" :height="1800"></Works>
     <Footer id="contact" :columnLength="layoutColumns+1" :height="300"></Footer>
-
+    <ScrollArrow />
   </div>
 </template>
 
@@ -15,6 +15,7 @@ import Hero from '~/components/Hero.vue';
 import About from '~/components/About.vue';
 import Works from '~/components/Works.vue';
 import Footer from '~/components/Footer.vue';
+import ScrollArrow from '~/components/ScrollArrow.vue';
 
 export default {
   components: {
@@ -22,7 +23,8 @@ export default {
     Hero,
     About,
     Works,
-    Footer
+    Footer,
+    ScrollArrow
   },
   data() {
     return  {
@@ -32,6 +34,7 @@ export default {
   },
   async asyncData({$axios}) {
       try {
+          console.log("api acall")
           let response = await $axios.$get('/api/category');
           console.log(response.category);
           return {

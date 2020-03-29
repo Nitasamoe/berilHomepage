@@ -1,4 +1,4 @@
-const URL = 'http://localhost:3100'
+const URL = 'http://localhost:8080'
 
 module.exports = {
   mode: 'universal',

@@ -1,8 +1,8 @@
 <template>
-    <div class="footer pageGrid" :style="footerStyle">
+    <div class="footer pageGrid">
         <div class="contactData">
             <hr>
-            <h2>Contact Me</h2>
+            <h3>Contact Me</h3>
             <p>fasfasf asfd asdfasdf a asdfasf</p>
             <p>fas a afasf asda</p>
         </div>
@@ -13,18 +13,7 @@
 
 <script>
 export default {
-    props: ['columnLength', 'height'],
-    computed: {
-        footerStyle(){
-            let cssStyle = "";
-            cssStyle += "grid-column-start: 1;";
-            cssStyle += "grid-column-end: " + this.columnLength+ ";";
-            cssStyle += "height:" + this.height + "px;";
-            cssStyle += "display:grid;";
-            cssStyle += "backgroundColor: #f4f4f4;";
-            return cssStyle
-        }
-    }
+    
 }
 </script>
 
@@ -37,6 +26,11 @@ hr {
     width: 100%;
 }
 
+.footer {
+    display: grid;
+    height: 200px;
+    background-color: #f4f4f4;
+}
 .footer > div {
     grid-column: 2 / 12;
     display: flex;

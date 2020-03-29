@@ -1,7 +1,7 @@
 <template>
-    <div class="works pageGrid" :style="worksStyle">
+    <div class="works pageGrid">
         <div class="titleText">
-            <h2>Works</h2>
+            <h1>Works</h1>
         </div>
         <div class="categories">
             <ul>
@@ -17,7 +17,7 @@
                 <div></div>
                 <div>
                     <div class="textHolder">
-                        <h4 class="headline">{{ project.name }}</h4>
+                        <span class="headline">{{ project.name }}</span>
                         <p>{{ project.shortDescr }}</p>
                     </div>
                 </div>
@@ -38,15 +38,6 @@ export default {
                 {"name": "Super Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id": 4}
             ]
         }
-    },
-    computed: {
-        worksStyle(){
-            let cssStyle = "";
-            cssStyle += "grid-column-start: 1;"
-            cssStyle += "display: grid;";
-            cssStyle += "grid-template-rows: 140px 100px 1fr 80px";
-            return cssStyle;
-        }
     }
 }
 </script>
@@ -56,11 +47,20 @@ export default {
 @import '~/static/css/globalVariables.css';
 @import '~/static/css/baseUi.css';
 
-/* Styling */
-.works {
-    background-color: #f4f4f4;
-    padding-top: 100px;
+
+
+/* ############ Flex/Grid ############# */
+@media only screen and (min-width: 0px)  { 
+    .works {
+        display: grid;
+        grid-template-rows: 50px 100px 1fr 100px;
+        background-color: #f4f4f4;
+    }
 }
+
+
+
+/* Styling */
 .projectPreview {
     background-color: #b7b7b7;
 }
@@ -71,83 +71,53 @@ export default {
 /* Layout */
 
 /* Title Text */
-.works {
-    height: 1800px;
-}
 .titleText {
+    grid-row: 2/3;
     text-align: center;
     grid-column: 2/12;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-.headline { /* bigger text */
-    font-size: 25px;
-    margin: 0px;
-    padding: 0px;
-    font-family: var(--mainFont);
-    font-style: normal;
-    font-weight: 300;
-    text-transform: uppercase;
-    line-height: 1.4;
-    color: #262626;
-}
+
 /* Catgory Picker */
 .categories {
     display: none;
 }
-
+.textHolder {
+    text-align: center;
+}
 /* Portoflio übersicht Div */
 .projectPortfolio {
     grid-column: 2 / 12;
-    grid-row: 2 / 11;
+    grid-row: 3 / 4;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
 }
     .projectPreview {
         flex-basis: 98%;
-        height: auto;
         margin-bottom: 20px;
         display: grid;
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-rows: 300px 90px;
         grid-template-columns: 1fr;
     }
     .projectPreview div:nth-child(2) {
-        grid-row: 4/5;
+        grid-row: 2/3;
         grid-column: 1/2;
         display: flex;
         align-items: center;
         flex-flow: column nowrap;
-        justify-items: center;
         padding-top: 10px;
     }
-        .textHolder {
-            
-        }
-
 @media only screen and (min-width: 600px)  { 
-    .works {
-        height: 1000px;
-    }
     .projectPreview {
         flex-basis: 48%;
-        height: 400px;
+        grid-template-rows: 250px 90px;
     }
 }
 
 @media only screen and (min-width: 1200px)  { 
-    .works {
-         height: 1500px;
-    }
-    /* Projekt Portfolio size change to have space for categories */
-    .projectPortfolio {
-        grid-row: 3 / 4;
-        height: 1200px;
-    }
-    .projectPreview {
-        height: auto;
-    }
     /* Catgory Picker */
     .categories {
         display: inline-block;
@@ -163,6 +133,9 @@ export default {
     }
     .categories ul li {
         list-style-type: none;
+    }
+    .projectPreview {
+        grid-template-rows: 400px 90px;
     }
 }
 </style>

@@ -1,45 +1,106 @@
-h1 {
-    font-size: var(--h1TypeSize);
+
+* {
+    font-style: normal;
+    font-family: var(--mainFont);
     margin: 0px;
     padding: 0px;
-    font-family: var(--mainFont);
-    font-style: normal;
 }
-h2 {
-    font-size: var(--h2TypeSize);
-    margin: 0px;
-    padding: 0px;
-    font-weight: 100;
-    font-family: var(--mainFont);
-    font-style: normal;
+@media only screen and (min-width: 0px)  { 
+    h1 {
+        font-size: 32px;
+        color: #262626;
+        font-weight: 300;
+    }    
+    h2 {
+        font-size: 20px;
+        color: #878787;
+        font-weight: 100;
+    }
+    h3 {
+        font-size: 24px;
+        font-weight: 300;
+        text-transform: none;
+        line-height: 1.4;
+        color: #262626;
+    }
+    p { /* text for writing normal content */
+        font-size: 18px;
+        font-weight: 200;
+        color: #878787;
+        line-height: 1.3;
+    }
+    .buttonUi p {
+        font-size: 18px;
+    }
+    .headline { /* bigger text */
+        font-size: 18px;
+        font-weight: 300;
+        text-transform: uppercase;
+        line-height: 1.4;
+        color: #262626;
+    }
 }
-h3 {
-    font-size: 50px;
-    font-style: normal;
-    color: #262626;
-    font-weight: 300;
-    margin: 0px;
-    padding: 0px;
-    font-family: var(--mainFont);
-}
+
+
+
+
 h4 { /* bigger text */
-    font-size: 35px;
+    font-size: 24px;
     margin: 0px;
     padding: 0px;
     font-family: var(--mainFont);
-    font-style: normal;
     font-weight: 300;
     text-transform: none;
     line-height: 1.4;
     color: #262626;
 }
-p { /* text for writing normal content */
-    font-size: var(--baseTypeSize);
-    margin: 0px;
-    padding: 0px;
-    font-family: var(--mainFont);
-    font-style: normal;
-    font-weight: 200;
-    color: #878787;
-    line-height: 1.3;
+
+@media only screen and (min-width: 600px)  { 
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 28px;
+    }
+    h4 { /* bigger text */
+        font-size: 35px;
+    }
+    p {
+        font-size: 18px;
+    }
+    .buttonUi p {
+        font-size: 21px;
+    }
+    .headline { /* bigger text */
+        font-size: 18px;
+    }
+}
+
+
+@media only screen and (min-width: 1200px)  { 
+    h1 {
+        font-size: 50px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    h3 {
+        font-size: 32px;
+    }
+    h4 { /* bigger text */
+        font-size: 35px;
+    }
+    p {
+        font-size: 20px;
+    }
+    .buttonUi p {
+        font-size: 25px;
+    }
+    .headline { /* bigger text */
+        font-size: 20px;
+    }
+
 }

@@ -1,9 +1,9 @@
 <template>
-    <div class="aboutMe pageGrid" :style="aboutMeStyle">
+    <div class="aboutMe pageGrid">
         <div class="titleText">
             <!--<h1>About Me</h1>-->
         </div>
-        <div>
+        <div class="aboutComponent">
             <div class="pictureStyle">
                 <picture>
                     <!-- <source srcset="~/static/AboutMe_Picture.png" media="(win-width: 100px)"> -->
@@ -11,7 +11,7 @@
                 </picture>
             </div>
             <div class="aboutMeText">
-                    <h4> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</h4>
+                    <h3> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, ut labore et dolore magna aliquyam erat, sed diam voluptua.</h3>
                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="buttonUi">
@@ -25,26 +25,17 @@
 
 <script>
 export default {
-    props: ['columnLength', 'height'],
-    computed: {
-        aboutMeStyle(){
-            let cssStyle = "";
-            cssStyle += "grid-column: 1 /  " + this.columnLength + ";"
-            cssStyle += "display: grid;";
-            return cssStyle;
-        }
-    }
+    props: ['columnLength', 'height']
 }
 </script>
 
 <style scoped>
+@import '~/static/css/baseUi.css';
 @import '~/static/css/type.css';
 @import '~/static/css/globalVariables.css';
-@import '~/static/css/baseUi.css';
 
 /* Styling */
 .pictureStyle {
-    border: 10px solid #404040;
     background-color: #b7b7b7;
 }
 .aboutMe {
@@ -54,9 +45,11 @@ export default {
     background-color: white;
 }
 /* Layout */ 
+.pageGrid {
+    display: grid;
+}
 .aboutMe {
-    grid-template-rows: 140px 1fr;
-    height: 800px;
+    grid-template-rows: 140px 750px 50px;
 }
 /* Title Text */
 .titleText {
@@ -69,16 +62,16 @@ export default {
 }
 
 /* div with picture, text and button */
-.aboutMe > div:nth-child(2) {
+.aboutComponent {
     grid-column: 2/12;
-    grid-row: 2/6;
+    grid-row: 2/3;
     display: grid;
-    grid-template-columns: 0.5fr repeat(10, 1fr);
-    grid-template-rows: 4fr 4fr 2fr 2fr;
+    grid-template-columns: 15px repeat(8, 1fr) 15px;
+    grid-template-rows: 130px 120px 3fr 1fr;
 }
     /* Picture Frame of Portait */
     .pictureStyle {
-        grid-column: 3 / 10;
+        grid-column: 2 / 10;
         grid-row: 1 / 3;
         -webkit-transform: translate3d(0, 0, 500px);
         transform: translate3d(0, 0, 500px);
@@ -94,9 +87,10 @@ export default {
         -webkit-transform: translate3d(0, 0, 200px);
         transform: translate3d(0, 0, 200px);
         z-index: 200;
+        overflow: auto;
     }
         /* Text Top*/
-        .aboutMeText > h4 {
+        .aboutMeText > h3 {
             grid-column: 2/2;
             grid-row: 2/3;
         }
@@ -124,19 +118,25 @@ export default {
 picture img{
     width: 100%;
 }
-
+@media only screen and (min-width: 375px)  { 
+    .aboutComponent {
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: 130px 150px 3fr 1fr;
+    }
+}
+@media only screen and (min-width: 450px)  { 
+    .aboutComponent {
+        grid-column: 2/12;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: 130px 170px 3fr 1fr;
+    }
+}
 @media only screen and (min-width: 600px)  { 
-    /* Styling */
-    .pictureStyle {
-        border: 12px solid #404040;
-    }
-    .aboutMe {
-        height: 1000px;
-    }
     /* Layout */ 
-    .aboutMe > div:nth-child(2) {
-        grid-template-columns: 0.5fr repeat(10, 1fr);
-        grid-template-rows: 2fr 2fr 2fr 1fr;
+    .aboutComponent {
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: 200px 200px 3fr 1fr;
     }
 }
 
@@ -144,9 +144,6 @@ picture img{
     /* Styling */
     .pictureStyle {
         border: 0px solid #404040;
-    }
-    .aboutMe {
-        height: 800px;
     }
     /* div with picture, text and button */
     .aboutMe > div:nth-child(2) {

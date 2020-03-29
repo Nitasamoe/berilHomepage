@@ -1,9 +1,9 @@
 <template>
-    <div class="hero" :style="heroStyle">
+    <div class="hero">
     <!--<div v-bind:style="{ backgroundImage: 'url(' + require('~/assets/heroBack.png') + ')'}">-->
         <div class="heroText">
-            <h3>Service Designer</h3>
-            <p class="subtitle">I'm Beril Beden, a designer driving business solutions through user needs</p>
+            <h1>Service Designer</h1>
+            <h2>I'm Beril Beden, a designer driving business solutions through user needs</h2>
         </div>
         <div>
             <picture>
@@ -16,20 +16,6 @@
 
 <script>
 export default {
-    props: ['columnLength', 'height'],
-    computed: {
-        heroStyle(){
-            let cssStyle = "";
-            cssStyle += "grid-column-start: 1;";
-            cssStyle += "grid-column-end: " + this.columnLength+ ";";
-            cssStyle += "height:" + this.height + "px;";
-            cssStyle += "display:grid;";
-            cssStyle += "grid-template-columns: repeat(12, 1fr);";
-            cssStyle += "grid-template-rows: repeat(5, 1fr);";
-            cssStyle += "background-color: white;";
-            return cssStyle
-        }
-    }
 }
 </script>
 
@@ -37,17 +23,16 @@ export default {
 <style scoped>
 @import '~/static/css/type.css';
 @import '~/static/css/globalVariables.css';
-
-
 /* CCS for all Sizes and Mobile */ 
-.subtitle {
-    font-size: 30px;
-    color: #878787;
-    margin-top: 5px;
-}
 
 img {
     width: 100%;
+}
+.hero {
+    height: 550px;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(12, 1fr);
 }
 
 .heroText {
@@ -75,7 +60,18 @@ img {
     justify-content: center;
     align-content: center;
 }
+
+@media only screen and (min-width: 600px) {
+
+    .heroText {
+        grid-column: 3/11;
+    }
+}
+
 @media only screen and (min-width: 1200px) {
+    .hero {
+        height: 800px;
+    }
     .heroText {
         grid-column: 2/6;
         grid-row: 2/4;

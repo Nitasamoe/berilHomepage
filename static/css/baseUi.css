@@ -40,3 +40,16 @@
     padding-left: 30px;
     padding-right: 30px;
 }
+/* ########## BUTTON HOVER ########## */
+.hoverToBlack {
+    transition: all 0.4s ease 0s;
+}
+.hoverToBlack:hover {
+    background: black;
+    border-color: black;
+    transition: all 0.4s ease 0s;
+    cursor: pointer
+}
+.hoverToBlack:hover p{
+    color: #ffffff;
+}

@@ -15,7 +15,7 @@
                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="buttonUi">
-                    <button><p>Download CV</p></button>
+                    <button class="hoverToBlack"><p>Download CV</p></button>
             </div>
             <div class="whiteBack">
             </div>              
@@ -25,7 +25,49 @@
 
 <script>
 export default {
-    props: ['columnLength', 'height']
+    props: ['columnLength', 'height'],
+    data(){
+        return {
+            scrollX: 0
+        }
+    },
+    methods: {
+        handleScroll(){
+            this.scrollX = window.scrollY;  
+            console.log(this.scrollX) ;
+        }
+    },
+    beforeMount() {
+        console.log("Before mount");
+        document.addEventListener('scroll', this.handleScroll);
+    },
+    beforeDestroy() {
+        console.log("Before destroy");
+        document.addEventListener('scroll', this.handleScroll);
+    },
+    computed: {
+    },
+    watch: {
+        scrollX: (val)=>{
+            if(val > 250) {
+                document.getElementsByClassName("aboutComponent")[0].style.transform = "translate3d(0px, 0px, 0)"
+            } else {
+                document.getElementsByClassName("aboutComponent")[0].style.transform = "translate3d(0px, 50px, 0)"
+            }
+            if(val > 260) {
+                document.getElementsByClassName("pictureStyle")[0].style.transform = "translate3d(0px, 0px, 0)"
+            } else {
+                document.getElementsByClassName("pictureStyle")[0].style.transform = "translate3d(0px, 70px, 0)"
+            }
+            if(val > 330) {
+                document.getElementsByClassName("aboutMeText")[0].style.transform = "translate3d(0px, 0px, 0)";
+                document.getElementsByClassName("aboutMeText")[0].style.opacity = "1";
+            } else {
+                document.getElementsByClassName("aboutMeText")[0].style.transform = "translate3d(0px, 50px, 0)"
+                document.getElementsByClassName("aboutMeText")[0].style.opacity = "0";
+            }
+        }
+    }
 }
 </script>
 
@@ -33,6 +75,13 @@ export default {
 @import '~/static/css/baseUi.css';
 @import '~/static/css/type.css';
 @import '~/static/css/globalVariables.css';
+.aboutComponent, .pictureStyle, .aboutMeText {
+    transition: all 2s ease 0s;
+}
+
+.slideUp {
+    transform: translate3d(0, +200px, 0);
+}
 
 /* Styling */
 .pictureStyle {

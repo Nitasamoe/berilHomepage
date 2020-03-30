@@ -3,7 +3,7 @@
     <!--<div v-bind:style="{ backgroundImage: 'url(' + require('~/assets/heroBack.png') + ')'}">-->
         <div class="heroText">
             <h1>Service Designer</h1>
-            <h2>I'm Beril Beden, a designer driving business solutions through user needs</h2>
+            <h2>I'm Beril Beden, a designer lorum ipsum banana</h2>
         </div>
         <div>
             <picture>

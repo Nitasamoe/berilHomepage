@@ -33,10 +33,6 @@ export default {
     beforeDestroy() {
         console.log("Before destroy");
         document.addEventListener('scroll', this.handleScroll);
-    },
-    mounted() {
-        console.log("Created");
-        document.addEventListener('scroll', this.handleScroll);
     }
 }
 </script>

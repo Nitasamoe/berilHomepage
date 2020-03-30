@@ -7,7 +7,7 @@
             <ul>
                 <li v-for="category in categories" :key="category.id">
                     <div class="buttonUi">
-                        <button><p>{{category.title}}</p></button>
+                        <button class="hoverToBlack"><p>{{category.title}}</p></button>
                     </div>
                 </li>
             </ul>

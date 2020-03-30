@@ -66,6 +66,14 @@ export default {
     }
 }
 /* ############## STYLES ############## */ 
+li:hover a {
+  color: black;
+  font-weight: 400;
+}
+li {
+  text-align: center;
+}
+
 * {
     text-decoration: none;
     list-style: none;

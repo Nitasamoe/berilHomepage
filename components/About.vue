@@ -49,23 +49,23 @@ export default {
     },
     watch: {
         scrollX: (val)=>{
-            if(val > 250) {
-                document.getElementsByClassName("aboutComponent")[0].style.transform = "translate3d(0px, 0px, 0)"
-            } else {
-                document.getElementsByClassName("aboutComponent")[0].style.transform = "translate3d(0px, 50px, 0)"
-            }
-            if(val > 260) {
-                document.getElementsByClassName("pictureStyle")[0].style.transform = "translate3d(0px, 0px, 0)"
-            } else {
-                document.getElementsByClassName("pictureStyle")[0].style.transform = "translate3d(0px, 70px, 0)"
-            }
-            if(val > 330) {
-                document.getElementsByClassName("aboutMeText")[0].style.transform = "translate3d(0px, 0px, 0)";
-                document.getElementsByClassName("aboutMeText")[0].style.opacity = "1";
-            } else {
-                document.getElementsByClassName("aboutMeText")[0].style.transform = "translate3d(0px, 50px, 0)"
+            let translation = 30;
+            if(val < 350) {
+                document.getElementsByClassName("aboutComponent")[0].style.transform = `translate3d(0px, 0px, 0)`;
+                document.getElementsByClassName("aboutMeText")[0].style.transform = `translate3d(0px, 0px, 0)`;
+                document.getElementsByClassName("buttonUi")[0].style.transform = `translate3d(0px, 0px, 0)`;
+                document.getElementsByClassName("whiteBack")[0].style.transform = `translate3d(0px, 0px, 0)`;
+                document.getElementsByClassName("pictureStyle")[0].style.transform = `translate3d(0px, 0px, 0)`;
                 document.getElementsByClassName("aboutMeText")[0].style.opacity = "0";
+            } else {
+                document.getElementsByClassName("aboutComponent")[0].style.transform = `translate3d(0px, -${translation}px, 0)`;
+                document.getElementsByClassName("pictureStyle")[0].style.transform = `translate3d(0px, -${translation}px, 0)`;
+                document.getElementsByClassName("aboutMeText")[0].style.transform = `translate3d(0px, -${translation}px, 0)`;
+                document.getElementsByClassName("buttonUi")[0].style.transform = `translate3d(0px, -${translation}px, 0)`;
+                document.getElementsByClassName("whiteBack")[0].style.transform = `translate3d(0px, -${translation}px, 0)`;
+                document.getElementsByClassName("aboutMeText")[0].style.opacity = "1";
             }
+            
         }
     }
 }
@@ -75,10 +75,21 @@ export default {
 @import '~/static/css/baseUi.css';
 @import '~/static/css/type.css';
 @import '~/static/css/globalVariables.css';
-.aboutComponent, .pictureStyle, .aboutMeText {
-    transition: all 2s ease 0s;
+.aboutComponent {
+    transition: all 2s ease-in-out 0s;
 }
-
+.pictureStyle {
+    transition: all 1.4s ease-in-out 0s;
+}
+.aboutMeText {
+    transition: all 1.6s ease-in-out 0s;
+}
+.buttonUi {
+    transition: all 1.9s ease-in-out 0s;
+}
+.whiteBack {
+    transition: all 1.5s ease-in-out 0s;
+}
 .slideUp {
     transform: translate3d(0, +200px, 0);
 }

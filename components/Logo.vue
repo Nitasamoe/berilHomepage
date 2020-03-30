@@ -19,7 +19,7 @@
 </template>
 <style>
 .berilLogo {
-  animation: 2s appear;
+  animation: 10s appear;
 }
 
 @keyframes appear {

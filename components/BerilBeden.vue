@@ -8,7 +8,7 @@
 @import '~/static/css/globalVariables.css';
 
 .NuxtLogo {
-  animation: 1s appear;
+  animation: 5s appear;
   font-family: var(--mainFont);
   font-size: var(--mainFontSize);
   font-weight: var(--mainFontWeight);

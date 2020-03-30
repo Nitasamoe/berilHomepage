@@ -24,6 +24,7 @@
 </template>
 
 <script>
+
 export default {
     props: ['columnLength', 'height'],
     data(){
@@ -34,7 +35,6 @@ export default {
     methods: {
         handleScroll(){
             this.scrollX = window.scrollY;  
-            console.log(this.scrollX) ;
         }
     },
     beforeMount() {
@@ -53,8 +53,8 @@ export default {
             if(val < 350) {
                 document.getElementsByClassName("aboutComponent")[0].style.transform = `translate3d(0px, 0px, 0)`;
                 document.getElementsByClassName("aboutMeText")[0].style.transform = `translate3d(0px, 0px, 0)`;
-                document.getElementsByClassName("buttonUi")[0].style.transform = `translate3d(0px, 0px, 0)`;
-                document.getElementsByClassName("whiteBack")[0].style.transform = `translate3d(0px, 0px, 0)`;
+                //document.getElementsByClassName("buttonUi")[0].style.transform = `translate3d(0px, 0px, 0)`;
+                //document.getElementsByClassName("whiteBack")[0].style.transform = `translate3d(0px, 0px, 0)`;
                 document.getElementsByClassName("pictureStyle")[0].style.transform = `translate3d(0px, 0px, 0)`;
                 document.getElementsByClassName("aboutMeText")[0].style.opacity = "0";
             } else {
@@ -84,11 +84,8 @@ export default {
 .aboutMeText {
     transition: all 1.6s ease-in-out 0s;
 }
-.buttonUi {
+.buttonUi, .whiteBack {
     transition: all 1.9s ease-in-out 0s;
-}
-.whiteBack {
-    transition: all 1.5s ease-in-out 0s;
 }
 .slideUp {
     transform: translate3d(0, +200px, 0);

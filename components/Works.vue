@@ -84,8 +84,7 @@ export default {
 
 .fadeInOut-move {
     transition: transform .5s ease-in-out;
-
-}
+ }
 
 .fadeInOut-enter {
     opacity: 0;
@@ -105,13 +104,10 @@ export default {
 }
 
 @keyframes fadeInOut {
-    0% {
+    from {
         opacity: 1;
     }
-    50% {
-        opacity: 0;
-    }
-    100% {
+    to {
         opacity: 1;
     }
 }

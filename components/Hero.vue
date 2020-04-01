@@ -5,17 +5,19 @@
             <h1>Service Designer</h1>
             <h2>I'm Beril Beden, a designer lorum ipsum banana</h2>
         </div>
-        <div>
-            <picture>
-                <!-- <source srcset="~/static/AboutMe_Picture.png" media="(win-width: 100px)"> -->
-                <!--<img src="~/assets/heroBackW.png" alt="The Picture of Beril Beden">-->
-            </picture>
+        <div  class="sittingGirl" :style="{backgroundImage: 'url(./picture/sittingGirl.svg)'}">
+           
         </div>
     </div>    
 </template>
 
 <script>
+import SittingGirl from '~/components/SittingGirl.vue';
+
 export default {
+    components: {
+        SittingGirl
+    }
 }
 </script>
 
@@ -25,9 +27,6 @@ export default {
 @import '~/static/css/globalVariables.css';
 /* CCS for all Sizes and Mobile */ 
 
-img {
-    width: 100%;
-}
 .hero {
     height: 550px;
     display: grid;
@@ -46,25 +45,24 @@ img {
     color: black;
 }
 
-.hero > div:nth-child(2) {
-    grid-column: 1/13;
+.sittingGirl {
+    grid-column: 5/13;
     grid-row: 3/6;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-}
-
-.hero > div:nth-child(2) > picture {
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
 
 @media only screen and (min-width: 600px) {
 
     .heroText {
         grid-column: 3/11;
+    }
+    .sittingGirl {
+        background-position: bottom;
     }
 }
 
@@ -79,16 +77,13 @@ img {
         justify-content: center;
         text-align: left;
     }
-    .hero > div:nth-child(2) {
-        grid-column: 4/13;
-        grid-row: 1/6;
+    .sittingGirl {
+        grid-column: 5/13;
+        grid-row: 2/6;
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    .hero > div:nth-child(2) > picture {
-        justify-content: flex-end;
+        background-position: right;
     }
 
    img {

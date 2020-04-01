@@ -6,7 +6,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Beril Beden',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -59,20 +59,6 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     // https://medium.com/@kozyreva.hanna/nuxt-js-fontawesome-integration-7ec56b1a41c8
-    [
-      'nuxt-fontawesome', {
-        imports: [
-         {
-           set: '@fortawesome/free-solid-svg-icons',
-           icons: ['fas']
-         },
-         {
-           set:'@fortawesome/free-brands-svg-icons',
-           icons: ['fab']
-         }
-       ]
-      }
-    ]
   ],
   /*
   ** Axios module configuration

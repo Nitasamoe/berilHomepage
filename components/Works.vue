@@ -7,22 +7,26 @@
             <ul>
                 <li v-for="category in categories" :key="category.id">
                     <div class="buttonUi">
-                        <button class="hoverToBlack"><p>{{category.title}}</p></button>
+                        <button @click="filterByCategory(category.id)" class="hoverToBlack"><p>{{category.title}}</p></button>
                     </div>
                 </li>
             </ul>
         </div>
-        <div class="projectPortfolio">
-            <div class="projectPreview" v-for="project in projects" :key="project.id">
-                <div></div>
-                <div>
-                    <div class="textHolder">
-                        <span class="headline">{{ project.name }}</span>
-                        <p>{{ project.shortDescr }}</p>
+        <ul class="projectPortfolio">
+            <transition-group class="projectPortfolio" name="fadeInOut">
+                <li class="projectPreview" v-for="project in projects" :key="project.id">
+                    <div  class="workPicture"
+                          :style="{backgroundImage: 'url('+project.photo+')'}"
+                    ></div>
+                    <div class="textBox">
+                        <div class="textHolder">
+                            <span class="headline">{{ project.name }}</span>
+                            <p>{{ project.shortDescr }}</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                </li>                
+            </transition-group> 
+        </ul>
     </div>    
 </template>
 
@@ -32,11 +36,26 @@ export default {
     data(){
         return {
             projects: [
-                {"name": "Super Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id": 1},
-                {"name": "Super Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id": 2},
-                {"name": "Super Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id": 3},
-                {"name": "Super Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id": 4}
-            ]
+                {"name": "Service Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id": 1, "photo": "./picture/pictureOne.jpg", "category":"sd" },
+                {"name": "Design Research Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id": 2, "photo": "./picture/pictureTwo.jpg" , "category":"dr"},
+                {"name": "Interior Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id": 3, "photo": "./picture/pictureThree.jpg", "category":"i" },
+                {"name": "Service Design Project", "shortDescr": "Lorum Ipsum Hipstum bipsum buspum", "id": 4, "photo": "./picture/pictureFour.jpg", "category":"sd" }
+            ],
+            show : true
+        }
+    },
+    methods: {
+        filterByCategory(id){
+            var projects = this.projects;
+            let newArr = [];
+            projects.forEach(function(work, index) {
+                if(work.category !== id) {
+                    newArr.push(work);
+                } else {
+                    newArr.unshift(work);
+                }
+            })
+            this.projects = newArr;
         }
     }
 }
@@ -59,15 +78,54 @@ export default {
 }
 
 
+.fadeInOut-item {
+    transition: all 0.5s;
+}
+
+.fadeInOut-move {
+    transition: transform .5s ease-in-out;
+
+}
+
+.fadeInOut-enter {
+    opacity: 0;
+}
+
+.fadeInOut-ever-active {
+    opacity: 0;
+}
+
+.fadeInOut-leave {
+
+}
+
+.fadeInOut-leave-active {
+    /* transition: opacity 1s; */
+    /* opacity: 0; */
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 /* Styling */
 .projectPreview {
     background-color: #b7b7b7;
 }
-.projectPreview div:nth-child(2) {
+.textBox {
     background-color: white;
 }
-
+.workPicture {
+    background-size: cover;
+} 
 /* Layout */
 
 /* Title Text */

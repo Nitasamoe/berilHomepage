@@ -44,7 +44,7 @@ export default {
           console.log("#####################");
           console.log("Error while retrieving Data from API");
           return {
-              categories: [{"title":"interior"}, {"title":"Design Research"}, {"title":"Fun"}]  
+              categories: [{"title":"Interior", "id":"i"}, {"title":"Design Research", "id":"dr"}, {"title":"Service Design", "id":"sd"}]  
           }
       }
   }

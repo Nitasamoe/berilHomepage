@@ -4,7 +4,9 @@
             <!--<h1>About Me</h1>-->
         </div>
         <div class="aboutComponent">
-            <div class="pictureStyle">
+            <div class="pictureStyle"
+                :style="{backgroundImage: 'url(./picture/pictureSix.jpg)'}"
+            >
                 <picture>
                     <!-- <source srcset="~/static/AboutMe_Picture.png" media="(win-width: 100px)"> -->
                     <!--<img src="~/static/AboutMe_Picture.png" alt="The Picture of Beril Beden"> -->
@@ -29,43 +31,63 @@ export default {
     props: ['columnLength', 'height'],
     data(){
         return {
-            scrollX: 0
+            // scrollX: 0,
+            // windowWidth: 0,
+            scrollComponents: {
+                scrollY: 0,
+                windowWidth: 0
+            }
         }
     },
     methods: {
         handleScroll(){
-            this.scrollX = window.scrollY;  
+            this.scrollComponents.scrollY = window.scrollY;
+            this.scrollComponents.windowWidth = window.innerWidth;
+        },
+        handleResize(){
+            this.windowWidth = window.innerWidth;
         }
     },
     beforeMount() {
         console.log("Before mount");
         document.addEventListener('scroll', this.handleScroll);
+        document.addEventListener('resize', this.handleResize);
     },
     beforeDestroy() {
         console.log("Before destroy");
         document.addEventListener('scroll', this.handleScroll);
+        document.addEventListener('resize', this.handleResize);
     },
     computed: {
     },
     watch: {
-        scrollX: (val)=>{
-            let translation = 30;
-            if(val < 350) {
-                document.getElementsByClassName("aboutComponent")[0].style.transform = `translate3d(0px, 0px, 0)`;
-                document.getElementsByClassName("aboutMeText")[0].style.transform = `translate3d(0px, 0px, 0)`;
-                //document.getElementsByClassName("buttonUi")[0].style.transform = `translate3d(0px, 0px, 0)`;
-                //document.getElementsByClassName("whiteBack")[0].style.transform = `translate3d(0px, 0px, 0)`;
-                document.getElementsByClassName("pictureStyle")[0].style.transform = `translate3d(0px, 0px, 0)`;
-                document.getElementsByClassName("aboutMeText")[0].style.opacity = "0";
-            } else {
-                document.getElementsByClassName("aboutComponent")[0].style.transform = `translate3d(0px, -${translation}px, 0)`;
-                document.getElementsByClassName("pictureStyle")[0].style.transform = `translate3d(0px, -${translation}px, 0)`;
-                document.getElementsByClassName("aboutMeText")[0].style.transform = `translate3d(0px, -${translation}px, 0)`;
-                document.getElementsByClassName("buttonUi")[0].style.transform = `translate3d(0px, -${translation}px, 0)`;
-                document.getElementsByClassName("whiteBack")[0].style.transform = `translate3d(0px, -${translation}px, 0)`;
-                document.getElementsByClassName("aboutMeText")[0].style.opacity = "1";
+        scrollComponents: {
+            deep: true,
+            handler(val) {
+                let scrollY = val.scrollY;
+                let windowWidth = val.windowWidth;
+                let translation = 30;
+                let aboutScroll = 400;
+                if( 600 < windowWidth && windowWidth < 1200 ) {aboutScroll = 580;}
+                if( 1200 < windowWidth && windowWidth < 10000 ) {aboutScroll = 440;}
+                // console.log("-------------------");
+                // console.log("windowWidth "+ windowWidth);
+                // console.log("scrollY "+ scrollY);
+                // console.log("aboutScroll " + aboutScroll);
+                if(scrollY < aboutScroll) {
+                    document.getElementsByClassName("aboutComponent")[0].style.transform = `translate3d(0px, 0px, 0)`;
+                    document.getElementsByClassName("aboutMeText")[0].style.transform = `translate3d(0px, 0px, 0)`;
+                    document.getElementsByClassName("pictureStyle")[0].style.transform = `translate3d(0px, 0px, 0)`;
+                    document.getElementsByClassName("aboutMeText")[0].style.opacity = "0";
+                } else {
+                    document.getElementsByClassName("aboutComponent")[0].style.transform = `translate3d(0px, -${translation}px, 0)`;
+                    document.getElementsByClassName("pictureStyle")[0].style.transform = `translate3d(0px, -${translation}px, 0)`;
+                    document.getElementsByClassName("aboutMeText")[0].style.transform = `translate3d(0px, -${translation}px, 0)`;
+                    document.getElementsByClassName("buttonUi")[0].style.transform = `translate3d(0px, -${translation}px, 0)`;
+                    document.getElementsByClassName("whiteBack")[0].style.transform = `translate3d(0px, -${translation}px, 0)`;
+                    document.getElementsByClassName("aboutMeText")[0].style.opacity = "1";
+                }
             }
-            
         }
     }
 }
@@ -94,6 +116,8 @@ export default {
 /* Styling */
 .pictureStyle {
     background-color: #b7b7b7;
+    background-size: cover;
+    background-position: bottom;
 }
 .aboutMe {
     background-color: #f4f4f4;

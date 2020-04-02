@@ -46,6 +46,9 @@ export default {
 .menu-toggle {
   animation: 1s appear;
 }
+.menu-toggle:hover > .burger > hr {
+  border: solid 1px black;
+}
 .burger > hr:nth-child(1) {
     transform: rotate(90deg) translateX(10px);
 }

@@ -101,6 +101,7 @@ export default {
 @media only screen and (min-width: 1200px) {
     .hero {
         /* height: 800px; */
+        grid-template-columns: repeat(11, 1fr) 0.2fr;
     }
     .heroText {
         grid-column: 2/6;

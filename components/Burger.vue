@@ -58,7 +58,8 @@ export default {
 .burger > hr {
     height: 30px;
     position: absolute;
-    color: #909090;
+    border: solid 1px #909090;
+    /* color: #909090; */
 }
 .burgerActive .burger > hr:nth-child(1){
     animation: 0.2s ease-in-out transitionToXTopBarReverse;

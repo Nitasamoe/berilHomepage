@@ -110,8 +110,8 @@ export default {
         text-align: left;
     }
     .sittingGirl {
-        grid-column: 5/13;
-        grid-row: 2/6;
+        grid-column: 5/12;
+        grid-row: 3/6;
         display: flex;
         justify-content: center;
         align-items: center;

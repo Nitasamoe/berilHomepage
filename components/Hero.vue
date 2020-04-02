@@ -1,5 +1,5 @@
 <template>
-    <div class="hero">
+    <div class="hero" :style="styleObject">
     <!--<div v-bind:style="{ backgroundImage: 'url(' + require('~/assets/heroBack.png') + ')'}">-->
         <div class="heroText">
             <h1>Service Designer</h1>
@@ -17,6 +17,38 @@ import SittingGirl from '~/components/SittingGirl.vue';
 export default {
     components: {
         SittingGirl
+    },
+    data(){
+        return {
+            windowWidth: 0,
+            styleObject: {
+                height: ""
+            }
+        }
+    },
+    methods: {
+        handleScroll() {
+            this.styleObject.height = this.excludeTooSmallNumbers(window.innerHeight) + "px";
+            this.windowWidth = window.innerWidth;
+            console.log(this.styleObject.height);
+        },
+        excludeTooSmallNumbers(val) {
+            console.log(this.windowWidth);
+            return (val < 500 ? 500 : val) - (this.windowWidth > 600 ? 80 : 50); // subtract height of nav bar
+        }
+    },
+    beforeMount() {
+        console.log("Before mount");
+        var self = this;
+        this.windowWidth = window.innerWidth;
+        this.styleObject.height = this.excludeTooSmallNumbers(window.innerHeight) + "px";
+        window.addEventListener('resize', self.handleScroll);
+        console.log("asdadad");
+    },
+    beforeDestroy() {
+        console.log("Before destroy");
+        var self = this
+        window.addEventListener('resize', self.handleScroll);
     }
 }
 </script>
@@ -28,7 +60,7 @@ export default {
 /* CCS for all Sizes and Mobile */ 
 
 .hero {
-    height: 550px;
+    /* height: 550px; */
     display: grid;
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(12, 1fr);
@@ -68,7 +100,7 @@ export default {
 
 @media only screen and (min-width: 1200px) {
     .hero {
-        height: 800px;
+        /* height: 800px; */
     }
     .heroText {
         grid-column: 2/6;

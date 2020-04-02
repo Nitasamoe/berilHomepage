@@ -49,14 +49,14 @@ export default {
         }
     },
     beforeMount() {
-        console.log("Before mount");
-        document.addEventListener('scroll', this.handleScroll);
-        document.addEventListener('resize', this.handleResize);
+        console.log("Before Mount");
+        window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('resize', this.handleResize);
     },
     beforeDestroy() {
         console.log("Before destroy");
-        document.addEventListener('scroll', this.handleScroll);
-        document.addEventListener('resize', this.handleResize);
+        window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('resize', this.handleResize);
     },
     computed: {
     },

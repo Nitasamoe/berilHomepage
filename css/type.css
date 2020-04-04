@@ -1,0 +1,120 @@
+
+* {
+    font-style: normal;
+    font-family: var(--mainFont);
+    margin: 0px;
+    padding: 0px;
+}
+@media only screen and (min-width: 0px)  { 
+    h1 {
+        font-size: 32px;
+        color: #1C3040;
+        font-weight: 500;
+    }    
+    h2 {
+        font-size: 20px;
+        color: #1C3040;
+        font-weight: 300;
+    }
+    h3 {
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: none;
+        line-height: 1.4;
+        color: #1C3040;
+    }
+    p { /* text for writing normal content */
+        font-size: 18px;
+        font-weight: 200;
+        color: #1C3040;
+        line-height: 1.3;
+    }
+    .buttonUi p {
+        font-size: 14px;
+        color: #1C3040;
+        font-weight: 400;
+    }
+    .headline { /* bigger text */
+        font-size: 18px;
+        font-weight: 300;
+        text-transform: uppercase;
+        line-height: 1.4;
+        color: #262626;
+    }
+    .sectionTitle {
+        font-size:24px;
+        font-weight: 500;
+        line-height: 1.4;
+        color: #262626;
+    }
+}
+
+
+
+
+h4 { /* bigger text */
+    font-size: 24px;
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--mainFont);
+    font-weight: 300;
+    text-transform: none;
+    line-height: 1.4;
+    color: #262626;
+}
+
+@media only screen and (min-width: 600px)  { 
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    h4 { /* bigger text */
+        font-size: 35px;
+    }
+    p {
+        font-size: 18px;
+    }
+    .buttonUi p {
+        font-size: 16px;
+    }
+    .headline { /* bigger text */
+        font-size: 18px;
+    }
+    .sectionTitle {
+        font-size: 30px;
+    }
+}
+
+
+@media only screen and (min-width: 1200px)  { 
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 26px;
+    }
+    h3 {
+        font-size: 26px;
+    }
+    h4 { /* bigger text */
+        font-size: 35px;
+    }
+    p {
+        font-size: 22px;
+    }
+    .buttonUi p {
+        font-size: 18px;
+    }
+    .headline { /* bigger text */
+        font-size: 20px;
+    }
+    .sectionTitle {
+        font-size: 30px;
+    }
+
+}

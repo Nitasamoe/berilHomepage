@@ -1,0 +1,34 @@
+:root {
+    --fontMultiplicator: 1.1;
+    --baseTypeSize: 1em;
+    --h4TypeSize: calc(var(--baseTypeSize)*var(--fontMultiplicator));
+    --h3TypeSize: calc(var(--h4TypeSize)*var(--fontMultiplicator));
+    --h2TypeSize: calc(var(--h3TypeSize)*var(--fontMultiplicator));
+    --h1TypeSize: calc(var(--h2TypeSize)*var(--fontMultiplicator));
+
+
+    --mainColor:black;
+
+    /* --mainFont: 'Open Sans', sans-serif; */
+    --mainFont: 'Montserrat', sans-serif;
+    --mainFontSize: 28px;
+    --mainFontWeight: 500;
+    --mainFontStyle: normal;
+    --displayFont:'Poppins', sans-serif;
+
+}
+
+@media only screen and (min-width: 600px)  { 
+    :root {
+        --fontMultiplicator: 1.2;
+        --baseTypeSize: 1.2em;
+    }
+}
+
+
+@media only screen and (min-width: 1200px)  { 
+    :root {
+        --fontMultiplicator: 1.50;
+        --baseTypeSize: 1.2em;
+    }
+}

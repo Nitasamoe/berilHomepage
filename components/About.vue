@@ -131,7 +131,7 @@ export default {
     display: grid;
 }
 .aboutMe {
-    grid-template-rows: 140px 750px 50px;
+    grid-template-rows: 240px 750px 50px;
 }
 /* Title Text */
 .titleText {
@@ -200,11 +200,15 @@ export default {
 picture img{
     width: 100%;
 }
+.sectionTitle {
+    transform: translateY(10px);
+}
 @media only screen and (min-width: 375px)  { 
     .aboutComponent {
         grid-template-columns: repeat(10, 1fr);
         grid-template-rows: 130px 150px 3fr 1fr;
     }
+    
 }
 @media only screen and (min-width: 450px)  { 
     .aboutComponent {
@@ -233,7 +237,7 @@ picture img{
     }
     /* div with picture, text and button */
     .aboutMe > div:nth-child(2) {
-        grid-template-rows: 1fr 4fr 120px;
+        grid-template-rows: 0.5fr 4fr 120px;
     }
         /* Picture Frame of Portait */
         .pictureStyle {
@@ -251,7 +255,10 @@ picture img{
     }
     .whiteBack {
         grid-column: 2 / 12;
-        grid-row: 2 / 4;
+        grid-row: 1 / 4;
+    }
+    .sectionTitle {
+        transform: translateY(-20px);
     }
 }
 </style>

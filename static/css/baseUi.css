@@ -33,8 +33,9 @@
     justify-content: center;
 }
 .buttonUi > button {
-    background-color: transparent;
-    border: 1px solid #d2d2d2;
+    background-color: #C4D9D4;
+    /* border: 1px solid #d2d2d2; */
+    border: none;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 30px;
@@ -45,11 +46,11 @@
     transition: all 0.4s ease 0s;
 }
 .hoverToBlack:hover {
-    background: black;
-    border-color: black;
+    background: #1C3040;
+    border-color: #1C3040;
     transition: all 0.4s ease 0s;
     cursor: pointer
 }
 .hoverToBlack:hover p{
-    color: #ffffff;
+    color: #C4D9D4;
 }

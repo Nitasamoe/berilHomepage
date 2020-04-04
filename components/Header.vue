@@ -67,7 +67,7 @@ export default {
 }
 /* ############## STYLES ############## */ 
 li:hover a {
-  color: black;
+  color:#C4D9D4;
   font-weight: 400;
 }
 li {
@@ -83,11 +83,11 @@ hr {
     border: 0.5px solid;
 }
 a {
-    font-family: var(--mainFont);
-    font-size: 18px;
-    font-weight: 200;
-    text-transform: uppercase;
-    color: #c2c2c2;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    /* text-transform: uppercase; */
+    color: #1F2B3F;
 }
 :focus {
     outline: 0;
@@ -104,6 +104,7 @@ ul hr {
 }
 .logo {
     display: none;
+    width: 200px;
 }
 /* The Menu List */
 .main-menu {
@@ -163,9 +164,6 @@ li {
     }
     li {
         padding-top: 0px;
-    }
-    a {
-        color: #707070;
     }
     /* Backdrop to unclick menu is alwas hidden when there is no burger */
    .menu-close {

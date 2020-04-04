@@ -9,7 +9,8 @@
 
     --mainColor:black;
 
-    --mainFont: 'Open Sans', sans-serif;
+    /* --mainFont: 'Open Sans', sans-serif; */
+    --mainFont: 'Montserrat', sans-serif;
     --mainFontSize: 28px;
     --mainFontWeight: 500;
     --mainFontStyle: normal;

@@ -1,7 +1,7 @@
 <template>
     <div class="aboutMe pageGrid">
         <div class="titleText">
-            <!--<h1>About Me</h1>-->
+            <span class="sectionTitle">About Me</span>
         </div>
         <div class="aboutComponent">
             <div class="pictureStyle"
@@ -118,6 +118,7 @@ export default {
     background-color: #b7b7b7;
     background-size: cover;
     background-position: bottom;
+    box-shadow: 3px 3px 4px #ddd;
 }
 .aboutMe {
     background-color: #f4f4f4;
@@ -226,6 +227,10 @@ picture img{
     .pictureStyle {
         border: 0px solid #404040;
     }
+    .titleText {
+        grid-column: 1 / 12;
+        grid-row: 1 / 2;
+    }
     /* div with picture, text and button */
     .aboutMe > div:nth-child(2) {
         grid-template-rows: 1fr 4fr 120px;
@@ -233,7 +238,7 @@ picture img{
         /* Picture Frame of Portait */
         .pictureStyle {
             grid-column: 1 / 6;
-            grid-row: 1 / 3;
+            grid-row: 2 / 3;
         }
         /* Text Box with 2 Texts*/
         .aboutMeText {

@@ -1,7 +1,7 @@
 <template>
     <div class="works pageGrid">
         <div class="titleText">
-            <h1>Works</h1>
+            <span class="sectionTitle">Works</span>
         </div>
         <div class="categories">
             <ul>
@@ -21,7 +21,6 @@
                     <div class="textBox">
                         <div class="textHolder">
                             <span class="headline">{{ project.name }}</span>
-                            <p>{{ project.shortDescr }}</p>
                         </div>
                     </div>
                 </li>                
@@ -153,7 +152,7 @@ export default {
         flex-basis: 98%;
         margin-bottom: 20px;
         display: grid;
-        grid-template-rows: 300px 90px;
+        grid-template-rows: 300px 60px;
         grid-template-columns: 1fr;
     }
     .projectPreview div:nth-child(2) {
@@ -167,7 +166,7 @@ export default {
 @media only screen and (min-width: 600px)  { 
     .projectPreview {
         flex-basis: 48%;
-        grid-template-rows: 250px 90px;
+        grid-template-rows: 250px 60px;
     }
 }
 
@@ -197,7 +196,7 @@ export default {
         list-style-type: none;
     }
     .projectPreview {
-        grid-template-rows: 400px 90px;
+        grid-template-rows: 400px 60px;
     }
 }
 </style>

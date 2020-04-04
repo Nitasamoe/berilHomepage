@@ -2,8 +2,8 @@
     <div class="hero" :style="styleObject">
     <!--<div v-bind:style="{ backgroundImage: 'url(' + require('~/assets/heroBack.png') + ')'}">-->
         <div class="heroText">
-            <h1>Service Designer</h1>
-            <h2>I'm Beril Beden, a designer lorum ipsum banana</h2>
+            <h1>Hi, this is Beril</h1>
+            <h2>I am a product service system designer</h2>
         </div>
         <div  class="sittingGirl" :style="{backgroundImage: 'url(./picture/sittingGirl.svg)'}">
            
@@ -78,7 +78,7 @@ export default {
 }
 
 .sittingGirl {
-    grid-column: 5/13;
+    grid-column: 1/13;
     grid-row: 3/6;
     display: flex;
     justify-content: center;
@@ -95,6 +95,7 @@ export default {
     }
     .sittingGirl {
         background-position: bottom;
+        grid-row: 3/6;
     }
 }
 
@@ -111,7 +112,7 @@ export default {
         text-align: left;
     }
     .sittingGirl {
-        grid-column: 3/12;
+        grid-column: 4/12;
         grid-row: 2/6;
         display: flex;
         justify-content: center;

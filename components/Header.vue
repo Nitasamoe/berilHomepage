@@ -1,6 +1,6 @@
 <template>
     <header class="navBar">
-        <BerilBeden class="logo" />
+        <div  class="logo" :style="{backgroundImage: 'url(./picture/berilLogo.svg)'}" />
         <nav id="main-menu" class="main-menu" aria-label="main menu">
             <ul>
                 <li><a >Menu</a></li>
@@ -105,6 +105,11 @@ ul hr {
 .logo {
     display: none;
     width: 200px;
+    animation: 5s appear;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 70px;
 }
 /* The Menu List */
 .main-menu {
